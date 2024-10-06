@@ -18,7 +18,7 @@ const BigImage = () => {
         src="/assits/Resort (4).webp"
         className="lg:object-cover object-contain lg:w-3/5 w-full h-fit lg:h-[100dvh]"
       />
-      <div className="bg-[#647d8b] lg:w-3/5 lg:h-[100dvh] h-[80dvh] w-full text-lg flex items-center font-medium text-white/70 font-sans  ">
+      <div className="bg-[#647d8b] lg:w-3/5 lg:h-[100dvh] h-[80dvh] w-full text-lg flex pb-5 items-center font-medium text-white/70 font-sans  ">
         <div className="w-96  font-big-image  flex items-center flex-col justify-center gap-7 mx-auto h-fit">
           <p className="text-2xl text-white tracking-[.3rem] w-8/12 font-light uppercase font-sans">
             {t("about our resort")}

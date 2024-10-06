@@ -70,11 +70,11 @@ const Hero = () => {
           yoyo: true,
         }
       );
-    gsap.to(".p", {
-      opacity: 1,
-      stagger: 0.5,
-      ease: "back.in",
-    });
+    // gsap.to(".p", {
+    //   opacity: 1,
+    //   stagger: 0.5,
+    //   ease: "back.in",
+    // });
     gsap.fromTo(
       ".main-text",
       {
@@ -106,14 +106,23 @@ const Hero = () => {
         className="all  lg:w-full w-[w-100vw] text-white  h-[100dvh] overflow-hidden scroll-smooth"
       >
         <div
+          onClick={() => setOpen(false)}
           className={`h-full pl-2 pt-10 w-1/3 bg-slate-700 z-10 ${
             open ? "translate-x-0" : "-translate-x-[100%]"
           }   duration-1000 absolute flex flex-col items-start justify-start gap-12 `}
         >
-          <p className=" cursor-pointer  p">{t("About")}</p>{" "}
-          <p className=" cursor-pointer  p">{t("our villas")}</p>{" "}
-          <p className=" cursor-pointer  p">{t("Contact & book")}</p>{" "}
-          <p className=" cursor-pointer  p">{t("packages")}</p>
+          <Link href="#about" className=" cursor-pointer  p">
+            {t("About")}
+          </Link>{" "}
+          <Link href="#rooms" className=" cursor-pointer  p">
+            {t("our villas")}
+          </Link>{" "}
+          <Link href="#book" className=" cursor-pointer  p">
+            {t("Contact & book")}
+          </Link>{" "}
+          <Link href="#packages" className=" cursor-pointer  p">
+            {t("packages")}
+          </Link>
         </div>
         <Image
           src="/assits/Resort (1).webp"
@@ -150,7 +159,10 @@ const Hero = () => {
           className="image object-cover"
           fill
         />
-        <div className="flex items-center w-full font-sans  justify-between -top-10 uppercase px-10 absolute">
+        <div
+          id="home"
+          className="flex items-center w-full font-sans  justify-between -top-10 uppercase px-10 absolute"
+        >
           {/* <div className="w-52  h-52"> */}
           <img
             src="/assits/logo.svg"
@@ -160,16 +172,16 @@ const Hero = () => {
           />
           {/* </div> */}
           <div className="lg:flex flex-row hidden tracking-wider  items-center lg:opacity-100 opacity-0 justify-between cursor-pointer gap-11  text-[13px] font-semibold ">
-            <Link href="#about" className="opacity-0 link p">
+            <Link href="#about" className=" link p">
               {t("About")}
             </Link>{" "}
-            <Link href="#rooms" className="opacity-0 link p">
+            <Link href="#rooms" className=" link p">
               {t("our villas")}
             </Link>{" "}
-            <Link href="#book" className="opacity-0 link p">
+            <Link href="#book" className=" link p">
               {t("Contact & book")}
             </Link>{" "}
-            <Link href="#packages" className="opacity-0  link p">
+            <Link href="#packages" className="  link p">
               {t("packages")}
             </Link>
             <div

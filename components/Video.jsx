@@ -20,7 +20,7 @@ const Video = () => {
         onMouseEnter={() => {
           setHover(false);
         }}
-        className=" flex flex-col-reverse lg:flex-row  items-center justify-center lg:mr-32 my-32 "
+        className=" flex flex-col-reverse lg:flex-row px-7 items-center justify-center lg:mr-32 my-32 "
       >
         <div className="lg:w-[380px] h-[300px] w-full py-5 flex flex-col  items-center justify-evenly bg-white  font-sans text-[#394145] lg:translate-x-1/3   lg:z-30">
           <p className="text-[10px]  tracking-[.2rem] uppercase font-semibold">

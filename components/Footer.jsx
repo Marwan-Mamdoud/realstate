@@ -5,7 +5,7 @@ import React from "react";
 const Footer = () => {
   const t = useTranslations("HomePage");
   return (
-    <div className=" bg-[#647d8b] flex items-center  justify-center flex-col">
+    <div className=" bg-[#647d8b] flex items-center  justify-center flex-col scroll-auto ">
       <div className="my-6 flex flex-col lg:flex-row lg:my-28  items-center w-full gap-5">
         <h1 className="text-white/60 lg:w-1/2 text-2xl lg:pl-80 w-fit tracking-wide ">
           {t("Subscribe To Our Newsletters")}
@@ -15,12 +15,18 @@ const Footer = () => {
           placeholder="Enter Your Email"
           className="px-4 relative w-4/5 py-4   lg:w-1/3 bg-[#647d8b] border-[.5px] outline-none focus:border-black duration-700 border-white/60"
         />{" "}
-        <button className="bg-[#566c79] py-3 text-white px-8 mr-10 lg:w-[200px] lg:px-2  lg:-translate-x-[115%]  lg:translate-y-0 translate-x-full   -translate-y-[160%]  z-10  uppercase text-sm font-extralight  tracking-widest">
+        <button className="bg-[#566c79] py-3 text-white px-8 mr-10 lg:w-[200px] lg:px-2  lg:-translate-x-[115%]  lg:translate-y-0 translate-x-[80%]   -translate-y-[160%]  z-10  uppercase text-sm font-extralight  tracking-widest">
           {t("Subscribe now")}
         </button>
       </div>
       <div className="w-full flex lg:justify-between flex-col lg:mb-0  lg:flex-row lg:w-3/4 lg:mx-auto px-10 items-start">
         <div className="flex-col flex lg:flex-row lg:items-center gap-5  lg:gap-10 mb-10 ">
+          <Link
+            href="#home"
+            className=" hover:text-black duration-700 text-sm text-white/60 font-sans"
+          >
+            {t("home")}
+          </Link>
           <Link
             href="#about"
             className=" hover:text-black duration-700 text-sm text-white/60 font-sans"
@@ -31,13 +37,13 @@ const Footer = () => {
             href="#rooms"
             className=" hover:text-black duration-700 text-sm text-white/60 font-sans"
           >
-            {t("Our Villas")}
+            {t("our villas")}
           </Link>
           <Link
             href="#packages"
             className=" hover:text-black duration-700 text-sm text-white/60 font-sans"
           >
-            {t("Packages")}
+            {t("packages")}
           </Link>
           <Link
             href="#book"
