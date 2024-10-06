@@ -46,7 +46,7 @@ const Book = () => {
     );
   }, []);
   return (
-    <div className=" book-back-ground relative">
+    <div className=" book-back-ground relative scroll-auto ">
       <div id="book" className="book-content footter absolute w-full bottom-0">
         <p className="text-white/80 uppercase tracking-[.3rem] text-xl pt-16 mb-10 flex items-center justify-center">
           {t("YOUR BALI PARADISE AWAITS")}
