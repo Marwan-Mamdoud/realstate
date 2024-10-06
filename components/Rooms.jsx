@@ -77,7 +77,7 @@ const Rooms = () => {
           </div>
         </div>
         <div
-          className={` grid lg:grid-cols-3 grid-cols-1 gap-5 lg:gap-0 w-5/6 mx-auto`}
+          className={` grid lg:grid-cols-3 grid-cols-1 gap-5 lg:gap-0  lg:w-[1100px] max-w-[1100px] mx-auto`}
         >
           <div
             className={`w-full   h-[440px] overflow-hidden relative`}

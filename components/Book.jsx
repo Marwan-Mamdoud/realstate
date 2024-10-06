@@ -54,7 +54,9 @@ const Book = () => {
         <div className="flex items-center flex-col justify-center gap-8">
           <div className="flex items-center lg:flex-row flex-wrap gap-5 px-5 justify-between">
             <div className="flex flex-col  gap-2">
-              <label htmlFor="Full Name text-white">Name</label>
+              <label className="text-white" htmlFor="Full Name ">
+                Name
+              </label>
               <input
                 onChange={(e) => setName(e.target.value)}
                 value={name}
@@ -64,7 +66,9 @@ const Book = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="Full Name text-white">Email</label>
+              <label className="text-white" htmlFor="Full Name">
+                Email
+              </label>
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
@@ -74,7 +78,9 @@ const Book = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor=" Full Name text-white">Number</label>
+              <label className="text-white" htmlFor=" Full Name text-white">
+                Number
+              </label>
               <input
                 onChange={(e) => setPhone(e.target.value)}
                 value={phone}
@@ -87,7 +93,9 @@ const Book = () => {
           {/* <div className="flex items-center gap-5 justify-between"></div> */}
           <div className="flex items-center lg:flex-row flex-wrap px-5 gap-5 justify-between">
             <div className="flex flex-col gap-2">
-              <label htmlFor="Full Name text-white">State</label>
+              <label className="text-white" htmlFor="Full Name text-white">
+                State
+              </label>
               <input
                 onChange={(e) => setState(e.target.value)}
                 value={state}
@@ -97,7 +105,9 @@ const Book = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="Full Name text-white">Rooms</label>
+              <label className="text-white" htmlFor="Full Name text-white">
+                Rooms
+              </label>
               <input
                 onChange={(e) => setRoom(e.target.value)}
                 value={rooms}
@@ -107,7 +117,9 @@ const Book = () => {
               />
             </div>
             <div className="flex flex-col gap-2 mb-3">
-              <label htmlFor="Full Name text-white">Massage</label>
+              <label className="text-white" htmlFor="Full Name text-white">
+                Massage
+              </label>
               <textarea
                 onChange={(e) => setMessage(e.target.value)}
                 value={message}

@@ -34,14 +34,14 @@ const DuobleImages = () => {
         <img
           src="/assits/Resort (1).webp"
           alt="one"
-          className="lg:w-[350px]  rounded-md h-1/2 w-11/12 object-contain"
+          className="w-[700px]    object-contain"
         />
       </div>
       <div className="flex items-center lg:flex-row flex-col justify-center gap-32 tracking-wider mt-32 mb-56">
         <img
           src="/assits/Resort (2).webp"
           alt="one"
-          className="lg:w-[350px]  rounded-md h-1/2 w-11/12 object-contain"
+          className="w-[700px]    object-contain"
         />
         <div className="flex flex-col items-center justify-center w-80 px-2 text-center">
           <p className=" text-black tracking-[.2rem] text-lg mb-5 ">
