@@ -31,18 +31,22 @@ const DuobleImages = () => {
             {t("EXPLORE PACKAGE")}
           </button>
         </div>
-        <img
-          src="/assits/Resort (1).webp"
-          alt="one"
-          className="w-[700px]    object-contain"
-        />
+        <div className="overflow-hidden w-[400px] h-[500px]">
+          <img
+            src="/assits/Resort (1).webp"
+            alt="one"
+            className="w-full h-full   object-cover"
+          />
+        </div>
       </div>
       <div className="flex items-center lg:flex-row flex-col justify-center gap-32 tracking-wider mt-32 mb-56">
-        <img
-          src="/assits/Resort (2).webp"
-          alt="one"
-          className="w-[700px]    object-contain"
-        />
+        <div className="overflow-hidden w-[400px] h-[500px]">
+          <img
+            src="/assits/Resort (2).webp"
+            alt="one"
+            className="w-full h-full   object-cover"
+          />
+        </div>
         <div className="flex flex-col items-center justify-center w-80 px-2 text-center">
           <p className=" text-black tracking-[.2rem] text-lg mb-5 ">
             {" "}
