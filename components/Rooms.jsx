@@ -77,6 +77,7 @@ const Rooms = () => {
           </div>
         </div> */}
         <div
+          id="rooms"
           className={` grid lg:grid-cols-3 grid-cols-1 gap-5 lg:gap-0  lg:w-[1100px] w-9/12 lg:max-w-[1100px] mx-auto`}
         >
           <div
