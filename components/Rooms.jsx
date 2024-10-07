@@ -303,7 +303,7 @@ const Rooms = () => {
               height={999}
               className="w-fit  object-cover h-fit"
             />
-            <CloseButton className=" absolute text-red-700 font-extrabold text-5xl right-[50px] top-[50px]" />
+            <CloseButton className=" absolute text-red-700 font-extrabold text-2xl right-[50px] top-[50px]" />
           </div>
         )}
         {open2 && (
@@ -318,7 +318,7 @@ const Rooms = () => {
               height={999}
               className="w-fit  object-cover h-fit"
             />
-            <CloseButton className=" absolute text-red-700 font-extrabold text-5xl right-[50px] top-[50px]" />
+            <CloseButton className=" absolute text-red-700 font-extrabold text-2xl right-[50px] top-[50px]" />
           </div>
         )}
         {open && (
@@ -333,7 +333,7 @@ const Rooms = () => {
               height={999}
               className="w-fit  object-cover h-fit"
             />
-            <CloseButton className=" absolute text-red-700 font-extrabold text-5xl right-[50px] top-[50px]" />
+            <CloseButton className=" absolute text-red-700 font-extrabold text-2xl right-[50px] top-[50px]" />
           </div>
         )}
         <button className="bg-white hidden py-3 mt-16 hover:bg-[#394145] hover:text-white transition-all duration-700  px-6 mx-auto font-sans uppercase font-normal text-[10px] border-black/60 border-[1px] tracking-[.2rem] text-black">
