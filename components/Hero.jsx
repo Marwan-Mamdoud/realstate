@@ -1,5 +1,5 @@
 "use client";
-import { Drawer, DrawerContent } from "@chakra-ui/react";
+import { Drawer, DrawerContent, StatDownArrow } from "@chakra-ui/react";
 import gsap from "gsap";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -103,7 +103,7 @@ const Hero = () => {
         onMouseEnter={() => {
           console.log("done");
         }}
-        className="all  lg:w-full w-[w-100vw] text-white  h-[100dvh] overflow-hidden scroll-smooth"
+        className="all  lg:w-full w-[w-100vw] text-white relative h-[100dvh] overflow-hidden scroll-smooth"
       >
         <div
           onClick={() => setOpen(false)}
@@ -262,15 +262,19 @@ const Hero = () => {
           <p className="w-2.5 h-2.5 bull3 rounded-full bg-slate-500"></p>
           <p className="w-2.5 h-2.5 bull4 rounded-full bg-slate-500"></p>
         </div>
-        <Link
-          href="#rooms"
-          className="bg-[#f7f5f2] text-black absolute  py-3 px-4 text-[9px]  bottom-4 right-6 tracking-[.2rem] hover:bg-[#394145] hover:text-[#f7f5f2] hover:cursor-pointer duration-500 uppercase"
-        >
-          {t("check avilability")}
+        <Link href="#rooms" className=" absolute bottom-4 right-6  ">
+          ↓
         </Link>
       </div>
     </>
   );
 };
+
+// <Link
+//   href="#rooms"
+//   className="bg-[#f7f5f2] text-black absolute  py-3 px-4 text-[9px]  bottom-4 right-6 tracking-[.2rem] hover:bg-[#394145] hover:text-[#f7f5f2] hover:cursor-pointer duration-500 uppercase"
+// >
+//   {t("check avilability")}
+// </Link>;
 
 export default Hero;

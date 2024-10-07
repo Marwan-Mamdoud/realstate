@@ -44,7 +44,7 @@ const Rooms = () => {
   return (
     <>
       <div className="w-full flex flex-col pt-32 mx-auto">
-        <div className="flex lg:flex-row flex-col justify-between lg:w-1/2 w-full  gap-2 mx-auto pb-20">
+        {/* <div className="flex lg:flex-row flex-col justify-between lg:w-1/2 w-full  gap-2 mx-auto pb-20">
           <div className="flex flex-col gap-5 h-full lg:w-3/5 w-full  lg:items-start items-center justify-between">
             <p className="uppercase tracking-wide text-gray-500 font-sans">
               {t("AWARD WINNING VILLA RESORT")}{" "}
@@ -75,7 +75,7 @@ const Rooms = () => {
               height={999}
             />
           </div>
-        </div>
+        </div> */}
         <div
           className={` grid lg:grid-cols-3 grid-cols-1 gap-5 lg:gap-0  lg:w-[1100px] w-9/12 lg:max-w-[1100px] mx-auto`}
         >

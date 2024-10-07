@@ -6,18 +6,28 @@ const Footer = () => {
   const t = useTranslations("HomePage");
   return (
     <div className=" bg-[#647d8b] flex items-center  justify-center flex-col scroll-auto ">
-      <div className="my-6 flex flex-col lg:flex-row lg:my-28  items-center w-full gap-5">
-        <h1 className="text-white/60 lg:w-1/2 text-2xl lg:pl-80 w-fit tracking-wide ">
-          {t("Subscribe To Our Newsletters")}
-        </h1>
-        <input
-          type="text"
-          placeholder="Enter Your Email"
-          className="px-4 relative w-4/5 py-4   lg:w-1/3 bg-[#647d8b] border-[.5px] outline-none focus:border-black duration-700 border-white/60"
-        />{" "}
-        <button className="bg-[#566c79] py-3 text-white px-8 mr-10 lg:w-[200px] lg:px-2  lg:-translate-x-[115%]  lg:translate-y-0 translate-x-[80%]   -translate-y-[160%]  z-10  uppercase text-sm font-extralight  tracking-widest">
-          {t("Subscribe now")}
-        </button>
+      <div className="flex items-start lg:items-center  pl-10 lg:pl-0 lg:flex-row flex-col w-full  justify-between lg:w-[1050px] py-12">
+        <img
+          src="/assits/logo.svg"
+          loading="lazy"
+          alt="logo"
+          className="object-fill flex-1 lg:flex-none mx-auto mb-12 lg:m-0 pt-4 w-40 h-40"
+        />
+        <div className="flex flex-col gap-2 text-white items-start justify-center">
+          <p className="font-semibold mb-6">Get in touch</p>
+          <div className="flex flex-row gap-5 items-start">
+            <img src="/assits/living.png" className="w-[30px] h-[30px]" />
+            <p>15 room for 35 person</p>
+          </div>
+          <div className="flex flex-row gap-5 items-start">
+            <img src="/assits/area_white.png" className="w-[30px] h-[30px]" />
+            <p>2000 meter sq</p>
+          </div>
+          <div className="flex flex-row gap-5 items-start">
+            <img src="/assits/jacuzzi.png" className="w-[30px] h-[30px]" />
+            <p>3 jacuzzi</p>
+          </div>
+        </div>
       </div>
       <div className="w-full flex lg:justify-between flex-col lg:mb-0  lg:flex-row lg:w-3/4 lg:mx-auto px-10 items-start">
         <div className="flex-col flex lg:flex-row lg:items-center gap-5  lg:gap-10 mb-10 ">

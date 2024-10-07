@@ -14,12 +14,12 @@ export default function Home() {
   return (
     <div className="w-full text-black h-full">
       <Hero />
-      <Rooms />
-      <Video />
-      <Review />
-      <Images />
       <BigImage />
+      <Video />
+      <Rooms />
       <DuobleImages />
+      <Review />
+      {/* <Images /> */}
       <Book />
       <Footer />
     </div>

@@ -70,7 +70,7 @@ const Review = () => {
   }, []);
   return (
     <>
-      <div className="mt-32 flex flex-col items-center relative justify-between mb-56">
+      <div className="mt-32 flex flex-col items-center relative justify-between mb-[400px]">
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -79,39 +79,39 @@ const Review = () => {
         />
         <div className="flex justify-center items-center lg:mb-10 mb-24">
           <Image
-            src="/assits/star.svg"
+            src="/assits/star.png"
             width={50}
             height={50}
             alt="star"
-            className="w-5 h-5"
+            className="w-4 h-4"
           />
           <Image
-            src="/assits/star.svg"
+            src="/assits/star.png"
             width={50}
             height={50}
             alt="star"
-            className="w-5 h-5"
+            className="w-4 h-4"
           />
           <Image
-            src="/assits/star.svg"
+            src="/assits/star.png"
             width={50}
             height={50}
             alt="star"
-            className="w-5 h-5"
+            className="w-4 h-4"
           />
           <Image
-            src="/assits/star.svg"
+            src="/assits/star.png"
             width={50}
             height={50}
             alt="star"
-            className="w-5 h-5"
+            className="w-4 h-4"
           />
           <Image
-            src="/assits/star.svg"
+            src="/assits/star.png"
             width={50}
             height={50}
             alt="star"
-            className="w-5 h-5"
+            className="w-4 h-4"
           />
         </div>
         <div className="w-2/3 absolute reviews opacity-0 top-16 review1 mx-auto text-center ">
