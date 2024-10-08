@@ -52,6 +52,9 @@
   min-height: 960px;
   display: flex;
 }
+.modal-video-body {
+  max-width: none !important;
+}
 
 .font-big-image {
   font-family: "Noto Sans", sans-serif;
