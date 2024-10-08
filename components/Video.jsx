@@ -1,7 +1,6 @@
 "use client";
 
 import "react-modal-video/css/modal-video.css";
-import "./MyVideoModal.css"; // استيراد ملف CSS
 
 import ModalVideo from "react-modal-video";
 import Image from "next/image";
@@ -70,7 +69,6 @@ const Video = () => {
         channel="vimeo"
         isOpen={isOpen}
         videoId="1015860988"
-        className="w-full"
         autoplay // لتشغيل الفيديو تلقائيًا عند فتحه
         closeButton={true}
         onClose={() => setIsOpen(false)}

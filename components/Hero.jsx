@@ -38,7 +38,7 @@ const Hero = () => {
       key: "selection",
     },
   ]);
-  const [rooms, setRooms] = useState();
+  const [rooms, setRooms] = useState(0);
   const [phone, setPhone] = useState(0);
   const [name, setName] = useState();
   const [startDate, setStartDate] = useState(new Date());
@@ -46,7 +46,7 @@ const Hero = () => {
   const [occasion, setOccasion] = useState();
   const [email, setEmail] = useState();
   const [message, setMessage] = useState();
-  const [people, setPeople] = useState();
+  const [people, setPeople] = useState(0);
   const t = useTranslations("HomePage");
 
   const sendMail = async () => {
@@ -396,7 +396,7 @@ const Hero = () => {
               <p>People</p>
               <div className="flex items-center justify-center gap-3">
                 <button
-                  onClick={() => setPeople((prev) => prev + 1)}
+                  onClick={() => setPeople((prev) => +prev + 1)}
                   className=""
                 >
                   +
@@ -404,7 +404,7 @@ const Hero = () => {
                 <p className="">{people}</p>
                 <button
                   onClick={() => {
-                    rooms === 0 ? setPeople(0) : setPeople((prev) => prev - 1);
+                    rooms === 0 ? setPeople(0) : setPeople((prev) => +prev - 1);
                   }}
                   className=""
                 >
