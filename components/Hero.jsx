@@ -420,7 +420,7 @@ const Hero = () => {
                 setStartDate(date[0].startDate);
                 setEndDate(date[0].endDate);
               }}
-              className="flex items-center text-[10px]  tracking-[.2rem] text-start uppercase  bg-white w-[230px] h-[40px] justify-start"
+              className="flex items-center text-[9.5px] font-semibold  tracking-[.2rem] text-start uppercase  bg-white w-[230px] h-[40px] justify-start"
             >
               <img
                 src="/assits/calend.png"
@@ -435,7 +435,7 @@ const Hero = () => {
               onClick={() => {
                 setHideRoom((prev) => !prev);
               }}
-              className="flex bg-white justify-between px-3 items-center text-black pl-2 text-[9.5px]  tracking-[.2rem] text-start uppercase  border-x-[6px] h-[40px] border-[#647d8b] w-[220px] "
+              className="flex bg-white justify-between px-3 items-center text-black pl-2 text-[9.3px]  font-semibold tracking-[.2rem] text-start uppercase  border-x-[6px] h-[40px] border-[#647d8b] w-[220px] "
             >
               <p>Rooms: </p>
               <p>{rooms}</p>
@@ -446,7 +446,7 @@ const Hero = () => {
               onClick={() => {
                 setOpenDialog(true);
               }}
-              className="bg-[#f7f5f2] text-black  h-[40px]  py-3 px-4 text-[9px]  tracking-[.2rem] hover:bg-[#394145] hover:text-[#f7f5f2] hover:cursor-pointer duration-500 uppercase"
+              className="bg-[#f7f5f2] text-black  h-[40px]  py-3 px-4 text-[9px] font-semibold tracking-[.2rem] hover:bg-[#394145] hover:text-[#f7f5f2] hover:cursor-pointer duration-500 uppercase"
             >
               {t("check avilability")}
             </botton>
@@ -470,17 +470,17 @@ const Hero = () => {
                   onClick={() => setOpenDialog(false)}
                   className="text-white right-5 top-5 absolute"
                 />
-                <p className="text-3xl text-white font-semibold tracking-wider mt-12 mb-5">
+                <p className="text-3xl font-light uppercase font-sans  text-white  tracking-[.3rem] mt-12 mb-5">
                   Welcome To Our Resort
                 </p>
-                <p className="text-xl text-white font-semibold tracking-wider">
+                <p className="text-xl text-white font-light uppercase font-sans  tracking-wider">
                   Book your destination
                 </p>
                 <form
                   action={sendMail}
                   className="py-8 px-10 w-[500px] mx-auto"
                 >
-                  <div className="flex pb-4 items-center justify-between  gap-5">
+                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
                     <label htmlFor="name">Full Name</label>
                     <input
                       required
@@ -490,7 +490,7 @@ const Hero = () => {
                       placeholder="full name"
                     />
                   </div>
-                  <div className="flex pb-4 items-center justify-between  gap-5">
+                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
                     <label htmlFor="name">Email</label>
                     <input
                       required
@@ -500,7 +500,7 @@ const Hero = () => {
                       placeholder="Email"
                     />
                   </div>
-                  <div className="flex pb-4 items-center justify-between  gap-5">
+                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
                     <label htmlFor="name" className="">
                       Phone Number
                     </label>
@@ -513,8 +513,8 @@ const Hero = () => {
                     />
                   </div>
                   <div className="flex flex-col">
-                    <div className="flex pb-4 items-center justify-between  gap-5">
-                      <p>Date</p>
+                    <div className="flex pb-4 items-center  justify-between  gap-5">
+                      <p className="font-big-image">Date</p>
                       <p
                         onClick={() => {
                           sethideCal((prev) => !prev);
@@ -557,13 +557,13 @@ const Hero = () => {
                       />
                     </div>
                   </div>
-                  <div className="flex pb-4 items-center justify-between  gap-5">
+                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
                     <label htmlFor="name">Occasion</label>
                     <select
                       required
                       onChange={(e) => setOccasion(e.target.value)}
                       type="text"
-                      className="w-[230px] h-[40px] pl-5 text-[#394145] outline-none"
+                      className="w-[230px] h-[40px] font-big-image pl-5 text-[#394145] outline-none"
                       placeholder="Select"
                     >
                       <option value="" className="text-[#394145]">
@@ -575,7 +575,7 @@ const Hero = () => {
                     </select>
                   </div>
 
-                  <div className="flex pb-4 items-center justify-between  gap-5">
+                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
                     <label htmlFor="name">Number of people</label>
                     <input
                       value={people}
@@ -586,7 +586,7 @@ const Hero = () => {
                       placeholder="eg 1, 2"
                     />
                   </div>
-                  <div className="flex pb-4 items-center justify-between  gap-5">
+                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
                     <label htmlFor="name">Number of Rooms</label>
                     <input
                       required
@@ -597,13 +597,13 @@ const Hero = () => {
                       placeholder="Rooms"
                     />
                   </div>
-                  <div className="flex pb-4 items-center justify-between  gap-5">
+                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
                     <label htmlFor="name">Message</label>
                     <input
                       required
                       onChange={(e) => setMessage(e.target.value)}
                       type="messge"
-                      className="w-[230px] h-[50px] pl-5 text-[#394145] focus:text-[#394145] outline-none"
+                      className="w-[230px] h-[50px] pl-5 font-big-image text-[#394145] focus:text-[#394145] outline-none"
                       placeholder="Message"
                     />
                   </div>
@@ -641,13 +641,13 @@ const Hero = () => {
                   onClick={() => setopenThank(false)}
                   className="text-white right-5 absolute"
                 />
-                <p className="text-3xl text-white font-semibold tracking-wider mt-10 mb-5">
+                <p className="text-3xl text-white font-light uppercase font-sans   tracking-[.3rem] mt-10 mb-5">
                   Welcome To Our Resort
                 </p>
-                <p className="text-xl text-white font-semibold tracking-wider">
+                <p className="text-xl text-white font-light uppercase font-sans  tracking-wider">
                   Book your destination
                 </p>
-                <h1 className="text-2xl bg-[#b1b1b1] w-[400px] mx-auto py-2 my-20 text-white">
+                <h1 className="text-2xl bg-[#b1b1b1] w-[400px] mx-auto font-big-image py-2 my-20 text-white">
                   Thank you for your submission
                 </h1>
               </Box>
