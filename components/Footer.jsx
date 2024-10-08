@@ -1,9 +1,11 @@
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import React from "react";
-
 const Footer = () => {
   const t = useTranslations("HomePage");
+
   return (
     <div className=" bg-[#647d8b] flex items-center  justify-center flex-col scroll-auto ">
       <div className="flex items-start lg:items-center  pl-10 lg:pl-0 lg:flex-row flex-col w-full  justify-between lg:w-[1050px] py-12">
@@ -16,16 +18,16 @@ const Footer = () => {
         <div className="flex flex-col gap-2 text-white items-start justify-center">
           <p className="font-semibold mb-6">Get in touch</p>
           <div className="flex flex-row gap-5 items-start">
-            <img src="/assits/living.png" className="w-[30px] h-[30px]" />
-            <p>15 room for 35 person</p>
+            <img src="/assits/email.png" className="w-[30px] h-[30px]" />
+            <p>marwanmamdouh159@gmai.com</p>
           </div>
           <div className="flex flex-row gap-5 items-start">
-            <img src="/assits/area_white.png" className="w-[30px] h-[30px]" />
-            <p>2000 meter sq</p>
+            <img src="/assits/location.png" className="w-[30px] h-[30px]" />
+            <p>40 Street-Cairo</p>
           </div>
           <div className="flex flex-row gap-5 items-start">
-            <img src="/assits/jacuzzi.png" className="w-[30px] h-[30px]" />
-            <p>3 jacuzzi</p>
+            <img src="/assits/computer.png" className="w-[30px] h-[30px]" />
+            <p>+20 123454536</p>
           </div>
         </div>
       </div>

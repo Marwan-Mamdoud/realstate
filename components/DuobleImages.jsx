@@ -19,7 +19,7 @@ const DuobleImages = () => {
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:wdth@62.5..100&display=swap"
         rel="stylesheet"
       />
-      <p className="text-2xl font-sans text-black/75 tracking-[.3rem] mb-36">
+      <p className="text-2xl font-sans text-black/75 tracking-[.3rem] mb-[75px]">
         {t("POPULAR PACKAGES")}
       </p>
       <div className="flex lg:flex-row flex-col gap-5 lg:gap-0 items-center  w-fit justify-center">
@@ -30,7 +30,7 @@ const DuobleImages = () => {
           onMouseEnter={() => {
             setHover2(false);
           }}
-          className="w-[350px] h-[650px] relative overflow-hidden"
+          className="w-[400px] h-[600px] relative overflow-hidden"
         >
           <div
             className={`back-ground-image rooms-back-ground transition-all duration-1000    w-full h-full absolute z-20`}
@@ -66,7 +66,7 @@ const DuobleImages = () => {
           onMouseEnter={() => {
             setHover3(false);
           }}
-          className="w-[350px] h-[650px] relative overflow-hidden"
+          className="w-[400px] h-[600px] relative overflow-hidden"
         >
           <div
             className={`back-ground-image transition-all duration-1000    w-full h-full absolute z-20`}
@@ -106,7 +106,7 @@ const DuobleImages = () => {
           onMouseEnter={() => {
             setHover(false);
           }}
-          className="w-[350px] h-[650px]  relative overflow-hidden"
+          className="w-[400px] h-[600px]  relative overflow-hidden"
         >
           <div
             className={`back-ground-image rooms-back-ground transition-all duration-1000    w-full h-full absolute z-20`}

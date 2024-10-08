@@ -6,19 +6,28 @@ const API = await axios.create({
   withCredentials: true,
 });
 
-export const sendEmail = async (name, email, phone, rooms, state, message) => {
+export const sendEmail = async (
+  name,
+  phone,
+  startDate,
+  endDate,
+  occasion,
+  rooms,
+  people
+) => {
   try {
-    console.log({ name, email, phone });
+    console.log({ name, phone });
     await API.post("/api/sendMail", {
       name,
-      email,
       phone,
+      startDate,
+      endDate,
+      occasion,
       rooms,
-      state,
-      message,
+      people,
     });
     console.log("done");
   } catch (error) {
-    console.log(error.message);
+    console.log(error, "error send email");
   }
 };

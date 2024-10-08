@@ -1,15 +1,77 @@
 "use client";
-import { Drawer, DrawerContent, StatDownArrow } from "@chakra-ui/react";
+import Backdrop from "@mui/material/Backdrop";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Fade from "@mui/material/Fade";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import {
+  CloseButton,
+  // Modal,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+} from "@chakra-ui/react";
+// import { Drawer, DrawerContent, StatDownArrow } from "@chakra-ui/react";
+import { addDays } from "date-fns";
 import gsap from "gsap";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { DateRangePicker } from "react-date-range";
+import { sendEmail } from "@/action/action";
 
 const Hero = () => {
   const [open, setOpen] = useState();
+  const [openDailog, setOpenDialog] = useState();
+  const [calHide, sethideCal] = useState(false);
+  const [calHide1, sethideCal1] = useState(false);
+  const [roomHide, setHideRoom] = useState(false);
   const [openlang, setOpenLnag] = useState(true);
+  const [openThank, setopenThank] = useState(false);
+  const [date, setDate] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(),
+      key: "selection",
+    },
+  ]);
+  const [rooms, setRooms] = useState(0);
+  const [phone, setPhone] = useState(0);
+  const [name, setName] = useState();
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
+  const [occasion, setOccasion] = useState();
+  const [people, setPeople] = useState(0);
   const t = useTranslations("HomePage");
+
+  const sendMail = async () => {
+    try {
+      // console.log({ name, email, phone });
+
+      console.log({ name, phone, startDate, endDate, occasion, rooms, people });
+      console.log("doneee");
+      setOpenDialog(false);
+      setopenThank(true);
+      await sendEmail(name, phone, startDate, endDate, occasion, rooms, people);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
 
   // const hoverMianTextStart = () => {
   //   gsap.to(".main-text", { scale: 1.5, duration: 3 });
@@ -262,19 +324,267 @@ const Hero = () => {
           <p className="w-2.5 h-2.5 bull3 rounded-full bg-slate-500"></p>
           <p className="w-2.5 h-2.5 bull4 rounded-full bg-slate-500"></p>
         </div>
-        <Link href="#rooms" className=" absolute bottom-4 right-6  ">
-          ↓
+        <Link href="#about" className=" absolute bottom-4 right-6  ">
+          <img
+            src="/assits/down.svg"
+            alt=""
+            srcset=""
+            className="h-[50px] w-[50px] text-white "
+          />
         </Link>
+        <div className="absolute flex flex-col items-center w-fit justify-center right-1/2 translate-x-1/2 bottom-10">
+          <div className={`${!calHide1 ? "hidden" : ""} z-50  mb-5`}>
+            <DateRangePicker
+              onChange={(item) => {
+                setDate([item.selection]), console.log(date);
+              }}
+              showSelectionPreview={true}
+              moveRangeOnFirstSelection={false}
+              months={2}
+              ranges={date}
+              direction="horizontal"
+              preventSnapRefocus={true}
+              calendarFocus="backwards"
+            />
+          </div>
+          <div
+            className={`${
+              !roomHide ? "hidden" : ""
+            } flex items-center justify-between w-[200px] px-3 border-2 border-black translate-x-3 mb-5 h-[40px] mt-3 bg-white text-black`}
+          >
+            <p>Rooms</p>
+            <div className="flex items-center justify-center gap-3">
+              <button onClick={() => setRooms((prev) => prev + 1)} className="">
+                +
+              </button>
+              <p className="">{rooms}</p>
+              <button
+                onClick={() => {
+                  rooms === 0 ? setRooms(0) : setRooms((prev) => prev - 1);
+                }}
+                className=""
+              >
+                -
+              </button>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 w-fit cursor-pointer text-black font-semibold justify-center">
+            <p
+              onClick={() => {
+                sethideCal1((prev) => !prev);
+                setStartDate(date[0].startDate);
+                setEndDate(date[0].endDate);
+              }}
+              className="flex items-center text-[10px]  tracking-[.2rem] text-start border-[1px] border-black bg-white w-[200px] h-[40px] justify-start"
+            >
+              <img
+                src="/assits/calend.png"
+                alt=""
+                srcset=""
+                className="w-10 ml-2  h-10"
+              />{" "}
+              {...date.startDate || "CheckIn"}-{...date.endDate || "CheckOut"}
+            </p>
+            <div
+              onClick={() => {
+                setHideRoom((prev) => !prev);
+              }}
+              className="flex  justify-between px-3 items-center pl-2 text-[12px]  tracking-[.2rem] text-start border-[1px] h-[40px] border-black bg-white w-[200px] "
+            >
+              <p>Rooms</p>
+              <p>{rooms}</p>
+            </div>
+            <botton
+              onClick={() => {
+                setOpenDialog(true);
+              }}
+              className="bg-[#f7f5f2] text-black  h-[40px]  py-3 px-4 text-[9px]  tracking-[.2rem] hover:bg-[#394145] hover:text-[#f7f5f2] hover:cursor-pointer duration-500 uppercase"
+            >
+              {t("check avilability")}
+            </botton>
+          </div>
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            open={openDailog}
+            onClose={() => setOpenDialog(false)}
+            closeAfterTransition
+            slots={{ backdrop: Backdrop }}
+            slotProps={{
+              backdrop: {
+                timeout: 500,
+              },
+            }}
+          >
+            <Fade in={openDailog}>
+              <Box className=" absolute top-[50%] right-[50%] translate-x-1/2 -translate-y-1/2 outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-[800px] h-fit bg-[#394145]">
+                <CloseButton
+                  onClick={() => setopenThank(false)}
+                  className="text-white right-5 absolute"
+                />
+                <p className="text-3xl text-white font-semibold tracking-wider mb-5">
+                  Welcome To Our Resort
+                </p>
+                <p className="text-xl text-white font-semibold tracking-wider">
+                  Book your destination
+                </p>
+                <form
+                  action={sendMail}
+                  className="py-8 px-10 w-[500px] mx-auto"
+                >
+                  <div className="flex pb-4 items-center justify-between  gap-5">
+                    <label htmlFor="name">Full Name</label>
+                    <input
+                      required
+                      onChange={(e) => setName(e.target.value)}
+                      type="text"
+                      className="w-[200px] h-[35px] pl-5 text-[#394145] outline-none"
+                      placeholder="full name"
+                    />
+                  </div>
+                  <div className="flex pb-4 items-center justify-between  gap-5">
+                    <label htmlFor="name" className="">
+                      Phone Number
+                    </label>
+                    <input
+                      required
+                      onChange={(e) => setPhone(e.target.value)}
+                      type="number"
+                      className="w-[200px] h-[35px] pl-5 ml-5   text-[#394145] outline-none"
+                      placeholder="+971"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <div className="flex pb-4 items-center justify-between  gap-5">
+                      <p>Date</p>
+                      <p
+                        onClick={() => {
+                          sethideCal((prev) => !prev);
+                          console.log(date[0].startDate, date[0].endDate);
+                          setStartDate(date[0].startDate);
+                          setEndDate(date[0].endDate);
+                        }}
+                        className=" cursor-pointer flex items-center text-[10px] text[#394145] tracking-[.2rem] text-start border-[1px] border-black bg-white w-[200px] h-[40px] justify-start"
+                      >
+                        <img
+                          src="/assits/calend.png"
+                          alt=""
+                          srcset=""
+                          className="w-10 ml-2  h-10"
+                        />{" "}
+                        {...date.startDate || "CheckIn"}-
+                        {...date.endDate || "CheckOut"}
+                      </p>
+                    </div>
+                    {/* <div className="absolute flex flex-col items-center w-fit justify-between  right-1/2 translate-x-1/2 bottom-10"> */}
+                    <div
+                      className={`${
+                        !calHide ? "hidden" : ""
+                      } z-50 absolute mt-10 mb-5`}
+                    >
+                      <DateRangePicker
+                        onChange={(item) => {
+                          setDate([item.selection]), console.log(date);
+                        }}
+                        showSelectionPreview={true}
+                        moveRangeOnFirstSelection={false}
+                        months={2}
+                        ranges={date}
+                        direction="horizontal"
+                        preventSnapRefocus={true}
+                        calendarFocus="backwards"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex pb-4 items-center justify-between  gap-5">
+                    <label htmlFor="name">Occasion</label>
+                    <select
+                      required
+                      onChange={(e) => setOccasion(e.target.value)}
+                      type="text"
+                      className="w-[200px] h-[30px] pl-5 text-[#394145] outline-none"
+                      placeholder="Select"
+                    >
+                      <option value="" className="text-[#394145]">
+                        Select
+                      </option>
+                      <option value="wedding">Wedding</option>
+                      <option value="family">Family</option>
+                      <option value="event">Event</option>
+                    </select>
+                  </div>
+
+                  <div className="flex pb-4 items-center justify-between  gap-5">
+                    <label htmlFor="name">Number of people</label>
+                    <input
+                      required
+                      onChange={(e) => setPeople(e.target.value)}
+                      type="number"
+                      className="w-[200px] h-[30px] pl-5 text-[#394145] outline-none"
+                      placeholder="eg 1, 2"
+                    />
+                  </div>
+                  <div className="flex pb-4 items-center justify-between  gap-5">
+                    <label htmlFor="name">Number of Rooms</label>
+                    <input
+                      required
+                      value={rooms}
+                      onChange={(e) => setRooms(e.target.value)}
+                      type="number"
+                      className="w-[200px] h-[30px] pl-5 text-[#394145] outline-none"
+                      placeholder="Rooms"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    // onClick={(() => sendMail, setopenThank(true))}
+                    className="py-1.5 px-9 text-sm text-[#394145] bg-white my-7"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </Box>
+            </Fade>
+          </Modal>
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            open={openThank}
+            onClose={() => setopenThank(false)}
+            closeAfterTransition
+            slots={{ backdrop: Backdrop }}
+            slotProps={{
+              backdrop: {
+                timeout: 500,
+              },
+            }}
+          >
+            <Fade in={openThank}>
+              <Box
+                className={`${
+                  !openThank ? "" : ""
+                }absolute top-[50%] right-[50%] translate-x-1/2 -translate-y-1/2 outline-none border-[1px] text-center py-3 px-3 border-[#394145]  h-[400px] w-[800px]  bg-[#394145]`}
+              >
+                <CloseButton
+                  onClick={() => setOpenDialog(false)}
+                  className="text-white right-5 absolute"
+                />
+                <p className="text-3xl text-white font-semibold tracking-wider mt-10 mb-5">
+                  Welcome To Our Resort
+                </p>
+                <p className="text-xl text-white font-semibold tracking-wider">
+                  Book your destination
+                </p>
+                <h1 className="text-2xl bg-[#b1b1b1] w-[400px] mx-auto py-2 my-20 text-white">
+                  Thank you for your submission
+                </h1>
+              </Box>
+            </Fade>
+          </Modal>
+        </div>
       </div>
     </>
   );
 };
-
-// <Link
-//   href="#rooms"
-//   className="bg-[#f7f5f2] text-black absolute  py-3 px-4 text-[9px]  bottom-4 right-6 tracking-[.2rem] hover:bg-[#394145] hover:text-[#f7f5f2] hover:cursor-pointer duration-500 uppercase"
-// >
-//   {t("check avilability")}
-// </Link>;
 
 export default Hero;

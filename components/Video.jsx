@@ -68,6 +68,7 @@ const Video = () => {
         channel="vimeo"
         isOpen={isOpen}
         videoId="1015860988"
+        className="w-full"
         onClose={() => setIsOpen(false)}
       />
     </div>

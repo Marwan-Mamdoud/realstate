@@ -60,7 +60,10 @@ const Book = () => {
             placeholder="Enter Your Email"
             className="lg:w-[500px] w-11/12 h-[45px] lg:translate-x-20 translate-x-0 outline-none focus:border-black mb-5 lg:mb-0 pl-5"
           />{" "}
-          <button className=" bg-[#647d8b] text-white font-light py-2 px-10 text-center tracking-widest translate-x-0 lg:-translate-x-[65%]">
+          <button
+            onClick={sendMail}
+            className=" bg-[#647d8b] text-white font-light py-2 px-10 text-center tracking-widest translate-x-0 lg:-translate-x-[65%]"
+          >
             {t("Subscribe now")}
           </button>
         </div>

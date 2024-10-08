@@ -5,7 +5,7 @@ const BigImage = () => {
   const t = useTranslations("HomePage");
   return (
     <div
-      className="w-full flex items-center lg:flex-row flex-col text-center border-t-8 border-[#647d8b] text-white mb-44"
+      className="w-full flex items-center lg:flex-row flex-col text-center  text-white mb-44"
       id="about"
     >
       <link rel="preconnect" href="https://fonts.googleapis.com" />
