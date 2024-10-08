@@ -90,9 +90,10 @@ const DuobleImages = () => {
               {" "}
               {/* {t("Host your event at our exclusive")} */}
               Celebrate your special day at our exclusive resort, where
-              relaxation, luxury, and natural beauty come together. Our wedding
-              package guarantees an unforgettable experience for you and your
-              guests, with elegant surroundings and top-tier amenities.
+              relaxation, luxury, and natural beauty unite. Our wedding package
+              offers an unforgettable experience with elegant settings and
+              top-tier amenities, ensuring a magical day for you and your
+              guests.
             </p>
             <button className="bg-[#f7f5f2] py-3 px-7 hidden tracking-[.2rem] font-sans text-[9px]  hover:bg-[#394145] hover:text-white duration-500">
               {t("EXPLORE PACKAGE")}
