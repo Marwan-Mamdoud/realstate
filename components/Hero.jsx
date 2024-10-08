@@ -350,22 +350,55 @@ const Hero = () => {
           <div
             className={`${
               !roomHide ? "hidden" : ""
-            } flex items-center justify-between w-[200px] px-3 border-2 border-black translate-x-3 mb-5 h-[40px] mt-3 bg-white text-black`}
+            } flex flex-col items-center justify-center w-fit border-[1px] mb-2 translate-x-3 border-black  h-fit `}
           >
-            <p>Rooms</p>
-            <div className="flex items-center justify-center gap-3">
-              <button onClick={() => setRooms((prev) => prev + 1)} className="">
-                +
-              </button>
-              <p className="">{rooms}</p>
-              <button
-                onClick={() => {
-                  rooms === 0 ? setRooms(0) : setRooms((prev) => prev - 1);
-                }}
-                className=""
-              >
-                -
-              </button>
+            <div
+              className={`${
+                !roomHide ? "hidden" : ""
+              } flex items-center justify-between w-[200px] px-3    h-[30px]  bg-white text-black`}
+            >
+              <p>Rooms</p>
+              <div className="flex items-center justify-center gap-3">
+                <button
+                  onClick={() => setRooms((prev) => prev + 1)}
+                  className=""
+                >
+                  +
+                </button>
+                <p className="">{rooms}</p>
+                <button
+                  onClick={() => {
+                    rooms === 0 ? setRooms(0) : setRooms((prev) => prev - 1);
+                  }}
+                  className=""
+                >
+                  -
+                </button>
+              </div>
+            </div>
+            <div
+              className={`${
+                !roomHide ? "hidden" : ""
+              } flex items-center justify-between w-[200px] px-3  h-[30px] bg-white text-black`}
+            >
+              <p>People</p>
+              <div className="flex items-center justify-center gap-3">
+                <button
+                  onClick={() => setPeople((prev) => prev + 1)}
+                  className=""
+                >
+                  +
+                </button>
+                <p className="">{people}</p>
+                <button
+                  onClick={() => {
+                    rooms === 0 ? setPeople(0) : setPeople((prev) => prev - 1);
+                  }}
+                  className=""
+                >
+                  -
+                </button>
+              </div>
             </div>
           </div>
           <div className="flex items-center gap-2 w-fit cursor-pointer text-black font-semibold justify-center">
@@ -391,8 +424,10 @@ const Hero = () => {
               }}
               className="flex  justify-between px-3 items-center pl-2 text-[12px]  tracking-[.2rem] text-start border-[1px] h-[40px] border-black bg-white w-[200px] "
             >
-              <p>Rooms</p>
+              <p>Rooms: </p>
               <p>{rooms}</p>
+              <p>people: </p>
+              <p>{people}</p>
             </div>
             <botton
               onClick={() => {
@@ -517,6 +552,7 @@ const Hero = () => {
                   <div className="flex pb-4 items-center justify-between  gap-5">
                     <label htmlFor="name">Number of people</label>
                     <input
+                      value={people}
                       required
                       onChange={(e) => setPeople(e.target.value)}
                       type="number"
@@ -531,7 +567,7 @@ const Hero = () => {
                       value={rooms}
                       onChange={(e) => setRooms(e.target.value)}
                       type="number"
-                      className="w-[200px] h-[30px] pl-5 text-[#394145] outline-none"
+                      className="w-[200px] h-[30px] pl-5 text-[#394145] focus:text-[#394145] outline-none"
                       placeholder="Rooms"
                     />
                   </div>
@@ -566,7 +602,7 @@ const Hero = () => {
                 }absolute top-[50%] right-[50%] translate-x-1/2 -translate-y-1/2 outline-none border-[1px] text-center py-3 px-3 border-[#394145]  h-[400px] w-[800px]  bg-[#394145]`}
               >
                 <CloseButton
-                  onClick={() => setOpenDialog(false)}
+                  onClick={() => setopenThank(false)}
                   className="text-white right-5 absolute"
                 />
                 <p className="text-3xl text-white font-semibold tracking-wider mt-10 mb-5">
