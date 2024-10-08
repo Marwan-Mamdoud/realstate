@@ -38,13 +38,15 @@ const Hero = () => {
       key: "selection",
     },
   ]);
-  const [rooms, setRooms] = useState(0);
+  const [rooms, setRooms] = useState();
   const [phone, setPhone] = useState(0);
   const [name, setName] = useState();
-  const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
   const [occasion, setOccasion] = useState();
-  const [people, setPeople] = useState(0);
+  const [email, setEmail] = useState();
+  const [message, setMessage] = useState();
+  const [people, setPeople] = useState();
   const t = useTranslations("HomePage");
 
   const sendMail = async () => {
@@ -55,7 +57,17 @@ const Hero = () => {
       console.log("doneee");
       setOpenDialog(false);
       setopenThank(true);
-      await sendEmail(name, phone, startDate, endDate, occasion, rooms, people);
+      await sendEmail(
+        name,
+        email,
+        phone,
+        startDate,
+        endDate,
+        occasion,
+        rooms,
+        people,
+        message
+      );
     } catch (error) {
       console.log(error.message);
     }
@@ -255,7 +267,7 @@ const Hero = () => {
               </div>
 
               <div
-                className={`flex flex-col absolute border-2 top-8 px-5 items-center justify-center border-white ${
+                className={`flex flex-col absolute border-2 top-8 lg:-right-5  px-5 items-center justify-center border-white ${
                   !openlang ? "" : "hidden "
                 }  rounded-lg `}
               >
@@ -332,14 +344,14 @@ const Hero = () => {
             className="h-[50px] w-[50px] text-white "
           />
         </Link>
-        <div className="absolute flex flex-col items-center w-fit justify-center right-1/2 translate-x-1/2 bottom-10">
-          <div className={`${!calHide1 ? "hidden" : ""} z-50  mb-5`}>
+        <div className="absolute flex flex-col  text-black  items-center w-fit justify-center right-1/2 translate-x-1/2 bottom-10">
+          <div className={`${!calHide1 ? "hidden" : ""} z-50 text-black  mb-5`}>
             <DateRangePicker
               onChange={(item) => {
                 setDate([item.selection]), console.log(date);
               }}
               showSelectionPreview={true}
-              moveRangeOnFirstSelection={false}
+              moveRangeOnFirstSelection={true}
               months={2}
               ranges={date}
               direction="horizontal"
@@ -350,12 +362,12 @@ const Hero = () => {
           <div
             className={`${
               !roomHide ? "hidden" : ""
-            } flex flex-col items-center justify-center w-fit border-[1px] mb-2 translate-x-3 border-black  h-fit `}
+            } flex flex-col items-center justify-center w-fit border-[1px] mb-2 translate-x-6 border-black  h-fit `}
           >
             <div
               className={`${
                 !roomHide ? "hidden" : ""
-              } flex items-center justify-between w-[200px] px-3    h-[30px]  bg-white text-black`}
+              } flex items-center justify-between w-[220px] px-3  uppercase  h-[30px]  bg-white text-black pl-2 text-[10px]  tracking-[.2rem]`}
             >
               <p>Rooms</p>
               <div className="flex items-center justify-center gap-3">
@@ -379,7 +391,7 @@ const Hero = () => {
             <div
               className={`${
                 !roomHide ? "hidden" : ""
-              } flex items-center justify-between w-[200px] px-3  h-[30px] bg-white text-black`}
+              } flex items-center justify-between w-[220px] px-3   h-[30px] uppercase bg-white text-black pl-2 text-[10px]  tracking-[.2rem]`}
             >
               <p>People</p>
               <div className="flex items-center justify-center gap-3">
@@ -401,28 +413,29 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-2 w-fit cursor-pointer text-black font-semibold justify-center">
+          <div className="flex items-center gap-0 w-fit cursor-pointer border-y-[6px] border-x-[8px] border-[#647d8b] text-black  justify-center">
             <p
               onClick={() => {
                 sethideCal1((prev) => !prev);
                 setStartDate(date[0].startDate);
                 setEndDate(date[0].endDate);
               }}
-              className="flex items-center text-[10px]  tracking-[.2rem] text-start border-[1px] border-black bg-white w-[200px] h-[40px] justify-start"
+              className="flex items-center text-[10px]  tracking-[.2rem] text-start uppercase  bg-white w-[230px] h-[40px] justify-start"
             >
               <img
                 src="/assits/calend.png"
                 alt=""
                 srcset=""
-                className="w-10 ml-2  h-10"
+                className="w-8 ml-2 mr-1  h-8"
               />{" "}
-              {...date.startDate || "CheckIn"}-{...date.endDate || "CheckOut"}
+              {`${startDate.toLocaleDateString("en-GB") || "chackIn"}`} -{" "}
+              {`${endDate.toLocaleDateString("en-GB") || "CheckOut"}`}
             </p>
             <div
               onClick={() => {
                 setHideRoom((prev) => !prev);
               }}
-              className="flex  justify-between px-3 items-center pl-2 text-[12px]  tracking-[.2rem] text-start border-[1px] h-[40px] border-black bg-white w-[200px] "
+              className="flex bg-white justify-between px-3 items-center text-black pl-2 text-[9.5px]  tracking-[.2rem] text-start uppercase  border-x-[6px] h-[40px] border-[#647d8b] w-[220px] "
             >
               <p>Rooms: </p>
               <p>{rooms}</p>
@@ -452,12 +465,12 @@ const Hero = () => {
             }}
           >
             <Fade in={openDailog}>
-              <Box className=" absolute top-[50%] right-[50%] translate-x-1/2 -translate-y-1/2 outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-[800px] h-fit bg-[#394145]">
+              <Box className=" absolute flex flex-col items-center justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full h-full bg-[#394145]">
                 <CloseButton
-                  onClick={() => setopenThank(false)}
-                  className="text-white right-5 absolute"
+                  onClick={() => setOpenDialog(false)}
+                  className="text-white right-5 top-5 absolute"
                 />
-                <p className="text-3xl text-white font-semibold tracking-wider mb-5">
+                <p className="text-3xl text-white font-semibold tracking-wider mt-12 mb-5">
                   Welcome To Our Resort
                 </p>
                 <p className="text-xl text-white font-semibold tracking-wider">
@@ -473,8 +486,18 @@ const Hero = () => {
                       required
                       onChange={(e) => setName(e.target.value)}
                       type="text"
-                      className="w-[200px] h-[35px] pl-5 text-[#394145] outline-none"
+                      className="w-[230px] h-[40px] pl-5 text-[#394145] outline-none"
                       placeholder="full name"
+                    />
+                  </div>
+                  <div className="flex pb-4 items-center justify-between  gap-5">
+                    <label htmlFor="name">Email</label>
+                    <input
+                      required
+                      onChange={(e) => setEmail(e.target.value)}
+                      type="email"
+                      className="w-[230px] h-[40px] pl-5 text-[#394145] outline-none"
+                      placeholder="Email"
                     />
                   </div>
                   <div className="flex pb-4 items-center justify-between  gap-5">
@@ -485,7 +508,7 @@ const Hero = () => {
                       required
                       onChange={(e) => setPhone(e.target.value)}
                       type="number"
-                      className="w-[200px] h-[35px] pl-5 ml-5   text-[#394145] outline-none"
+                      className="w-[230px] h-[40px] pl-5 ml-5   text-[#394145] outline-none"
                       placeholder="+971"
                     />
                   </div>
@@ -499,23 +522,26 @@ const Hero = () => {
                           setStartDate(date[0].startDate);
                           setEndDate(date[0].endDate);
                         }}
-                        className=" cursor-pointer flex items-center text-[10px] text[#394145] tracking-[.2rem] text-start border-[1px] border-black bg-white w-[200px] h-[40px] justify-start"
+                        className="flex items-center text-[10px] cursor-pointer text-black  tracking-[.2rem] text-start uppercase  bg-white w-[230px] h-[40px] justify-start"
                       >
                         <img
                           src="/assits/calend.png"
                           alt=""
                           srcset=""
-                          className="w-10 ml-2  h-10"
+                          className="w-8 ml-2 mr-1  h-8"
                         />{" "}
-                        {...date.startDate || "CheckIn"}-
-                        {...date.endDate || "CheckOut"}
+                        {`${
+                          startDate.toLocaleDateString("en-GB") || "chackIn"
+                        }`}{" "}
+                        -{" "}
+                        {`${endDate.toLocaleDateString("en-GB") || "CheckOut"}`}
                       </p>
                     </div>
                     {/* <div className="absolute flex flex-col items-center w-fit justify-between  right-1/2 translate-x-1/2 bottom-10"> */}
                     <div
                       className={`${
                         !calHide ? "hidden" : ""
-                      } z-50 absolute mt-10 mb-5`}
+                      } z-50 absolute text-black mt-10 mb-5`}
                     >
                       <DateRangePicker
                         onChange={(item) => {
@@ -537,7 +563,7 @@ const Hero = () => {
                       required
                       onChange={(e) => setOccasion(e.target.value)}
                       type="text"
-                      className="w-[200px] h-[30px] pl-5 text-[#394145] outline-none"
+                      className="w-[230px] h-[40px] pl-5 text-[#394145] outline-none"
                       placeholder="Select"
                     >
                       <option value="" className="text-[#394145]">
@@ -556,7 +582,7 @@ const Hero = () => {
                       required
                       onChange={(e) => setPeople(e.target.value)}
                       type="number"
-                      className="w-[200px] h-[30px] pl-5 text-[#394145] outline-none"
+                      className="w-[230px] h-[40px] pl-5 text-[#394145] outline-none"
                       placeholder="eg 1, 2"
                     />
                   </div>
@@ -567,14 +593,24 @@ const Hero = () => {
                       value={rooms}
                       onChange={(e) => setRooms(e.target.value)}
                       type="number"
-                      className="w-[200px] h-[30px] pl-5 text-[#394145] focus:text-[#394145] outline-none"
+                      className="w-[230px] h-[40px] pl-5 text-[#394145] focus:text-[#394145] outline-none"
                       placeholder="Rooms"
+                    />
+                  </div>
+                  <div className="flex pb-4 items-center justify-between  gap-5">
+                    <label htmlFor="name">Message</label>
+                    <input
+                      required
+                      onChange={(e) => setMessage(e.target.value)}
+                      type="messge"
+                      className="w-[230px] h-[50px] pl-5 text-[#394145] focus:text-[#394145] outline-none"
+                      placeholder="Message"
                     />
                   </div>
                   <button
                     type="submit"
                     // onClick={(() => sendMail, setopenThank(true))}
-                    className="py-1.5 px-9 text-sm text-[#394145] bg-white my-7"
+                    className="py-2 px-12 text-[10px] uppercase tracking-[.2rem] text-[#394145] bg-white my-7"
                   >
                     Submit
                   </button>

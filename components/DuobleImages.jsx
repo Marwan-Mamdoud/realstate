@@ -44,7 +44,7 @@ const DuobleImages = () => {
               !hover2 && "scale-110"
             }  object-cover roomImage w-full h-full `}
           />
-          <div className="flex flex-col items-start absolute z-50 pl-4 justify-center w-80 px-2 mx-auto -translate-y-full  text-white ">
+          <div className="flex flex-col items-start absolute z-50 pl-4 justify-center w-full px-2 mx-auto -translate-y-full  text-white ">
             <p className="  tracking-[.2rem] text-lg mb-5 ">
               {" "}
               {/* {t("Event Package")} */}
@@ -80,7 +80,7 @@ const DuobleImages = () => {
               !hover3 && "scale-110"
             }  object-cover roomImage w-full h-full `}
           />
-          <div className="flex flex-col items-start justify-center w-80 pl-4 mx-auto -translate-y-full absolute z-50 text-white ">
+          <div className="flex flex-col items-start justify-center full px-4 pl-4 mx-auto -translate-y-full absolute z-50 text-white ">
             <p className="  tracking-[.2rem] text-lg mb-5 ">
               {" "}
               {/* {t("Event Package")} */}
@@ -89,10 +89,10 @@ const DuobleImages = () => {
             <p className="font-big-image  mb-7 leading-relaxed">
               {" "}
               {/* {t("Host your event at our exclusive")} */}
-              Celebrate your special day in our exclusive resort, offering a
-              perfect blend of relaxation, luxury, and natural beauty. Our
-              wedding package ensures an unforgettable experience for the couple
-              and guests, surrounded by elegance and state-of-the-art amenities
+              Celebrate your special day at our exclusive resort, where
+              relaxation, luxury, and natural beauty come together. Our wedding
+              package guarantees an unforgettable experience for you and your
+              guests, with elegant surroundings and top-tier amenities.
             </p>
             <button className="bg-[#f7f5f2] py-3 px-7 hidden tracking-[.2rem] font-sans text-[9px]  hover:bg-[#394145] hover:text-white duration-500">
               {t("EXPLORE PACKAGE")}
@@ -120,7 +120,7 @@ const DuobleImages = () => {
               !hover && "scale-110"
             }  object-cover roomImage w-full h-full `}
           />
-          <div className="flex flex-col absolute z-50 items-start justify-center w-80 px-2 pl-4  -translate-y-full mx-auto text-white">
+          <div className="flex flex-col absolute z-50 items-start justify-center w-full px-4 pl-4  -translate-y-full mx-auto text-white">
             <p className="  tracking-[.2rem] text-lg mb-5 ">
               {" "}
               {/* {t("Wellness Package")} */}

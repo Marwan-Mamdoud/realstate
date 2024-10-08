@@ -1,0 +1,9 @@
+.react-modal-video .modal-video {
+  width: 100%; /* العرض الكامل للمودال */
+  height: 360px; /* الارتفاع المحدد */
+}
+.react-modal-video {
+  max-width: 80%; /* 80% من عرض الشاشة */
+  width: 640px; /* عرض محدد */
+  height: auto; /* الارتفاع تلقائي */
+}

@@ -8,23 +8,27 @@ const API = await axios.create({
 
 export const sendEmail = async (
   name,
+  email,
   phone,
   startDate,
   endDate,
   occasion,
   rooms,
-  people
+  people,
+  message
 ) => {
   try {
     console.log({ name, phone });
     await API.post("/api/sendMail", {
       name,
+      email,
       phone,
       startDate,
       endDate,
       occasion,
       rooms,
       people,
+      message,
     });
     console.log("done");
   } catch (error) {
