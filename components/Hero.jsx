@@ -431,7 +431,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-0 lg:w-fit w-[290px] lg:flex-row flex-col cursor-pointer border-y-[6px] border-x-[8px] border-[#647d8b] text-black  justify-center">
+          <div className="flex items-center gap-0 lg:w-fit w-[290px] lg:flex-row flex-col cursor-pointer border-y-[8px] border-x-[9px] border-[#647d8b] text-black  justify-center">
             <p
               onClick={() => {
                 sethideCal1((prev) => !prev);
@@ -456,7 +456,7 @@ const Hero = () => {
               onClick={() => {
                 setHideRoom((prev) => !prev);
               }}
-              className="flex bg-white justify-start px-3 items-center text-black pl-2 text-[9.3px]  font-semibold tracking-[.2rem] text-start uppercase  lg:border-x-[6px] h-[50px] border-[#647d8b] w-full lg:w-[290px] "
+              className="flex bg-white justify-start px-3 items-center text-black pl-2 text-[9.3px]  font-semibold tracking-[.2rem] text-start uppercase  lg:border-x-[9px] h-[50px] border-[#647d8b] w-full lg:w-[290px] "
             >
               <img
                 src="/assits/user.png"
@@ -475,7 +475,7 @@ const Hero = () => {
               onClick={() => {
                 setOpenDialog(true);
               }}
-              className="bg-[#f7f5f2] text-black   py-[18px]  text-center lg:w-[140px] w-full  text-[9px] font-semibold tracking-[.2rem] hover:bg-[#394145] hover:text-[#f7f5f2] hover:cursor-pointer duration-500 uppercase"
+              className="bg-[#f7f5f2] text-black   py-[18px]  text-center lg:w-[140px] w-full  text-[9.5px] font-semibold tracking-[.2rem] hover:bg-[#394145] hover:text-[#f7f5f2] hover:cursor-pointer duration-500 uppercase"
             >
               {t("check avilability")}
             </botton>
