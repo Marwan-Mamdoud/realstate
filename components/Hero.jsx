@@ -22,6 +22,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { DateRangePicker } from "react-date-range";
 import { sendEmail } from "@/action/action";
+import { duration } from "@mui/material";
+import { delay } from "framer-motion";
 
 const Hero = () => {
   const [open, setOpen] = useState();
@@ -38,17 +40,21 @@ const Hero = () => {
       key: "selection",
     },
   ]);
+  const options = { month: "long", day: "numeric" };
   const [rooms, setRooms] = useState(0);
   const [phone, setPhone] = useState(0);
   const [name, setName] = useState();
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(
+    new Date().toLocaleDateString("en-US", options)
+  );
+  const [endDate, setEndDate] = useState(
+    new Date().toLocaleDateString("en-US", options)
+  );
   const [occasion, setOccasion] = useState();
   const [email, setEmail] = useState();
   const [message, setMessage] = useState();
   const [people, setPeople] = useState(0);
   const t = useTranslations("HomePage");
-
   const sendMail = async () => {
     try {
       // console.log({ name, email, phone });
@@ -85,70 +91,75 @@ const Hero = () => {
     p: 4,
   };
 
-  // const hoverMianTextStart = () => {
-  //   gsap.to(".main-text", { scale: 1.5, duration: 3 });
-  // };
-  // const hoverMianTextEnd = () => {
-  //   gsap.to(".main-text", { scale: 1, duration: 3 });
-  // };
-  const timeLine = gsap.timeline({ repeat: -1 });
+  const tl = gsap.timeline({ repeat: -1 });
+
   useEffect(() => {
     gsap.fromTo(
       ".image",
       { opacity: 0 },
       {
         opacity: 1,
-        stagger: 3,
+        duration: 1,
+        stagger: 6,
         repeat: -1,
-        yoyo: true,
       }
     );
-    timeLine
-      .fromTo(
-        ".bull1",
-        { backgroundColor: "gray" },
-        {
-          backgroundColor: "white",
-          duration: 1.5,
-          repeat: 1,
-          yoyo: true,
-        }
-      )
-      .fromTo(
-        ".bull2",
-        { backgroundColor: "gray" },
-        {
-          backgroundColor: "white",
-          duration: 1.5,
-          repeat: 1,
-          yoyo: true,
-        }
-      )
-      .fromTo(
-        ".bull3",
-        { backgroundColor: "gray" },
-        {
-          backgroundColor: "white",
-          duration: 1.5,
-          repeat: 1,
-          yoyo: true,
-        }
-      )
-      .fromTo(
-        ".bull4",
-        { backgroundColor: "gray" },
-        {
-          backgroundColor: "white",
-          duration: 1.5,
-          repeat: 1,
-          yoyo: true,
-        }
-      );
-    // gsap.to(".p", {
-    //   opacity: 1,
-    //   stagger: 0.5,
-    //   ease: "back.in",
-    // });
+
+    tl.to(".bull1", { backgroundColor: "white", duration: 0.5 }) // تغيير اللون إلى الأبيض خلال 1 ثانية
+      .to(".bull1", { duration: 5 }) // تثبيت اللون الأبيض لمدة 6 ثوانٍ
+      .to(".bull1", { backgroundColor: "gray", duration: 0.5 })
+      .to(".bull2", { backgroundColor: "white", duration: 0.5 }) // تغيير اللون إلى الأبيض خلال 1 ثانية
+      .to(".bull2", { duration: 5 }) // تثبيت اللون الأبيض لمدة 6 ثوانٍ
+      .to(".bull2", { backgroundColor: "gray", duration: 0.5 })
+      .to(".bull3", { backgroundColor: "white", duration: 0.5 }) // تغيير اللون إلى الأبيض خلال 1 ثانية
+      .to(".bull3", { duration: 5 }) // تثبيت اللون الأبيض لمدة 6 ثوانٍ
+      .to(".bull3", { backgroundColor: "gray", duration: 0.5 })
+      .to(".bull4", { backgroundColor: "white", duration: 0.5 }) // تغيير اللون إلى الأبيض خلال 1 ثانية
+      .to(".bull4", { duration: 5 }) // تثبيت اللون الأبيض لمدة 6 ثوانٍ
+      .to(".bull4", { backgroundColor: "gray", duration: 0.5 }); // العودة إلى اللون الرمادي خلال 1 ثانية
+
+    // timeLine
+    //   .fromTo(
+    //     ".bull1",
+    //     { backgroundColor: "gray" },
+    //     {
+    //       backgroundColor: "white",
+    //       duration: 1,
+    //       repeat: 1,
+    //       yoyo: true,
+    //     }
+    //   )
+    //   .fromTo(
+    //     ".bull2",
+    //     { backgroundColor: "gray" },
+    //     {
+    //       backgroundColor: "white",
+    //       duration: 1,
+    //       repeat: 1,
+    //       yoyo: true,
+    //     }
+    //   )
+    //   .fromTo(
+    //     ".bull3",
+    //     { backgroundColor: "gray" },
+    //     {
+    //       backgroundColor: "white",
+    //       duration: 1,
+    //       repeat: 1,
+    //       yoyo: true,
+    //     }
+    //   )
+    //   .fromTo(
+    //     ".bull4",
+    //     { backgroundColor: "gray" },
+    //     {
+    //       backgroundColor: "white",
+    //       duration: 1,
+    //       repeat: 1,
+    //       yoyo: true,
+    //     }
+    //   );
+
     gsap.fromTo(
       ".main-text",
       {
@@ -198,6 +209,13 @@ const Hero = () => {
             {t("packages")}
           </Link>
         </div>
+        <video
+          autoPlay
+          muted
+          loop
+          className="video image w-full h-full object-cover"
+          src="/assits/Real estate.mp4"
+        ></video>
         <Image
           src="/assits/Resort (1).webp"
           loading="lazy"
@@ -220,14 +238,14 @@ const Hero = () => {
           fill
         />
         <Image
-          src="/assits/Resort (4).webp"
+          src="/assits/Resort (5).webp"
           loading="lazy"
           alt="image"
           className="image object-cover"
           fill
         />
         <Image
-          src="/assits/Resort (5).webp"
+          src="/assits/Resort (4).webp"
           loading="lazy"
           alt="image"
           className="image object-cover"
@@ -331,17 +349,17 @@ const Hero = () => {
           </span>
         </div>
         <div className="absolute bottom-0 p-4 gap-x-2 flex items-center justify-between">
-          <p className="w-2.5 h-2.5 bull1 rounded-full bg-slate-500"></p>
-          <p className="w-2.5 h-2.5 bull2 rounded-full bg-slate-500"></p>
-          <p className="w-2.5 h-2.5 bull3 rounded-full bg-slate-500"></p>
-          <p className="w-2.5 h-2.5 bull4 rounded-full bg-slate-500"></p>
+          <p className="w-2.5 h-2.5 bull1 bull rounded-full bg-slate-500"></p>
+          <p className="w-2.5 h-2.5 bull2  bull rounded-full bg-slate-500"></p>
+          <p className="w-2.5 h-2.5 bull3 bull rounded-full bg-slate-500"></p>
+          <p className="w-2.5 h-2.5 bull4 bull rounded-full bg-slate-500"></p>
         </div>
         <Link href="#about" className=" absolute bottom-4 right-6  ">
           <img
-            src="/assits/down.svg"
+            src="/assits/down.png"
             alt=""
             srcset=""
-            className="h-[50px] w-[50px] text-white "
+            className="h-[40px] w-[40px] text-white "
           />
         </Link>
         <div className="absolute flex flex-col  text-black  items-center w-fit justify-center right-1/2 translate-x-1/2 bottom-10">
@@ -367,9 +385,9 @@ const Hero = () => {
             <div
               className={`${
                 !roomHide ? "hidden" : ""
-              } flex items-center justify-between w-[220px] px-3  uppercase  h-[30px]  bg-white text-black pl-2 text-[10px]  tracking-[.2rem]`}
+              } flex items-center justify-between w-[220px] px-3  uppercase  h-[30px]  bg-white text-black pl-2 text-[9.3px]  font-semibold tracking-[.2rem]`}
             >
-              <p>Rooms</p>
+              <p>{t("Rooms")}</p>
               <div className="flex items-center justify-center gap-3">
                 <button
                   onClick={() => setRooms((prev) => prev + 1)}
@@ -391,9 +409,9 @@ const Hero = () => {
             <div
               className={`${
                 !roomHide ? "hidden" : ""
-              } flex items-center justify-between w-[220px] px-3   h-[30px] uppercase bg-white text-black pl-2 text-[10px]  tracking-[.2rem]`}
+              } flex items-center justify-between w-[220px] px-3   h-[30px] uppercase bg-white text-black pl-2 text-[9.3px]  font-semibold tracking-[.2rem]`}
             >
-              <p>People</p>
+              <p>{t("people")}</p>
               <div className="flex items-center justify-center gap-3">
                 <button
                   onClick={() => setPeople((prev) => +prev + 1)}
@@ -413,14 +431,18 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-0 w-fit cursor-pointer border-y-[6px] border-x-[8px] border-[#647d8b] text-black  justify-center">
+          <div className="flex items-center gap-0 lg:w-fit w-[290px] lg:flex-row flex-col cursor-pointer border-y-[6px] border-x-[8px] border-[#647d8b] text-black  justify-center">
             <p
               onClick={() => {
                 sethideCal1((prev) => !prev);
-                setStartDate(date[0].startDate);
-                setEndDate(date[0].endDate);
+                setStartDate(
+                  date[0].startDate.toLocaleDateString("en-US", options)
+                );
+                setEndDate(
+                  date[0].endDate.toLocaleDateString("en-US", options)
+                );
               }}
-              className="flex items-center text-[9.5px] font-semibold  tracking-[.2rem] text-start uppercase  bg-white w-[230px] h-[40px] justify-start"
+              className="flex items-center text-[9.5px]  font-semibold  tracking-[.2rem] text-start uppercase  bg-white lg:w-[290px] w-full h-[50px] justify-start"
             >
               <img
                 src="/assits/calend.png"
@@ -428,25 +450,32 @@ const Hero = () => {
                 srcset=""
                 className="w-8 ml-2 mr-1  h-8"
               />{" "}
-              {`${startDate.toLocaleDateString("en-GB") || "chackIn"}`} -{" "}
-              {`${endDate.toLocaleDateString("en-GB") || "CheckOut"}`}
+              {`${startDate || "chackIn"}`} - {`${endDate || "CheckOut"}`}
             </p>
             <div
               onClick={() => {
                 setHideRoom((prev) => !prev);
               }}
-              className="flex bg-white justify-between px-3 items-center text-black pl-2 text-[9.3px]  font-semibold tracking-[.2rem] text-start uppercase  border-x-[6px] h-[40px] border-[#647d8b] w-[220px] "
+              className="flex bg-white justify-start px-3 items-center text-black pl-2 text-[9.3px]  font-semibold tracking-[.2rem] text-start uppercase  lg:border-x-[6px] h-[50px] border-[#647d8b] w-full lg:w-[290px] "
             >
-              <p>Rooms: </p>
-              <p>{rooms}</p>
-              <p>people: </p>
-              <p>{people}</p>
+              <img
+                src="/assits/user.png"
+                alt=""
+                srcset=""
+                className="w-6 mr-5 ml-2  h-6"
+              />{" "}
+              <p className="mr-7">
+                {t("people")}: {people}
+              </p>
+              <p className="">
+                {t("Rooms")}: {rooms}
+              </p>
             </div>
             <botton
               onClick={() => {
                 setOpenDialog(true);
               }}
-              className="bg-[#f7f5f2] text-black  h-[40px]  py-3 px-4 text-[9px] font-semibold tracking-[.2rem] hover:bg-[#394145] hover:text-[#f7f5f2] hover:cursor-pointer duration-500 uppercase"
+              className="bg-[#f7f5f2] text-black   py-[18px]  text-center lg:w-[140px] w-full  text-[9px] font-semibold tracking-[.2rem] hover:bg-[#394145] hover:text-[#f7f5f2] hover:cursor-pointer duration-500 uppercase"
             >
               {t("check avilability")}
             </botton>
@@ -471,17 +500,17 @@ const Hero = () => {
                   className="text-white right-5 top-5 absolute"
                 />
                 <p className="text-3xl font-light uppercase font-sans  text-white  tracking-[.3rem] mt-12 mb-5">
-                  Welcome To Our Resort
+                  {t("Welcome To Our Resort")}
                 </p>
                 <p className="text-xl text-white font-light uppercase font-sans  tracking-wider">
-                  Book your destination
+                  {t("Book your destination")}
                 </p>
                 <form
                   action={sendMail}
                   className="py-8 px-10 w-[500px] mx-auto"
                 >
                   <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
-                    <label htmlFor="name">Full Name</label>
+                    <label htmlFor="name">{t("Full Name")}</label>
                     <input
                       required
                       onChange={(e) => setName(e.target.value)}
@@ -491,7 +520,7 @@ const Hero = () => {
                     />
                   </div>
                   <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
-                    <label htmlFor="name">Email</label>
+                    <label htmlFor="name">{t("Email")}</label>
                     <input
                       required
                       onChange={(e) => setEmail(e.target.value)}
@@ -502,7 +531,7 @@ const Hero = () => {
                   </div>
                   <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
                     <label htmlFor="name" className="">
-                      Phone Number
+                      {t("Phone Number")}
                     </label>
                     <input
                       required
@@ -514,7 +543,7 @@ const Hero = () => {
                   </div>
                   <div className="flex flex-col">
                     <div className="flex pb-4 items-center  justify-between  gap-5">
-                      <p className="font-big-image">Date</p>
+                      <p className="font-big-image">{t("Date")}</p>
                       <p
                         onClick={() => {
                           sethideCal((prev) => !prev);
@@ -530,11 +559,8 @@ const Hero = () => {
                           srcset=""
                           className="w-8 ml-2 mr-1  h-8"
                         />{" "}
-                        {`${
-                          startDate.toLocaleDateString("en-GB") || "chackIn"
-                        }`}{" "}
-                        -{" "}
-                        {`${endDate.toLocaleDateString("en-GB") || "CheckOut"}`}
+                        {`${startDate || "chackIn"}`} -{" "}
+                        {`${endDate || "CheckOut"}`}
                       </p>
                     </div>
                     {/* <div className="absolute flex flex-col items-center w-fit justify-between  right-1/2 translate-x-1/2 bottom-10"> */}
@@ -558,7 +584,7 @@ const Hero = () => {
                     </div>
                   </div>
                   <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
-                    <label htmlFor="name">Occasion</label>
+                    <label htmlFor="name">{t("Occasion")}</label>
                     <select
                       required
                       onChange={(e) => setOccasion(e.target.value)}
@@ -567,16 +593,16 @@ const Hero = () => {
                       placeholder="Select"
                     >
                       <option value="" className="text-[#394145]">
-                        Select
+                        {t("Select")}
                       </option>
-                      <option value="wedding">Wedding</option>
-                      <option value="family">Family</option>
-                      <option value="event">Event</option>
+                      <option value="wedding">{t("Wedding")}</option>
+                      <option value="family">{t("Family")}</option>
+                      <option value="event">{t("Event")}</option>
                     </select>
                   </div>
 
                   <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
-                    <label htmlFor="name">Number of people</label>
+                    <label htmlFor="name">{t("Number of people")}</label>
                     <input
                       value={people}
                       required
@@ -587,7 +613,7 @@ const Hero = () => {
                     />
                   </div>
                   <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
-                    <label htmlFor="name">Number of Rooms</label>
+                    <label htmlFor="name">{t("Number of Rooms")}</label>
                     <input
                       required
                       value={rooms}
@@ -598,7 +624,7 @@ const Hero = () => {
                     />
                   </div>
                   <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
-                    <label htmlFor="name">Message</label>
+                    <label htmlFor="name">{t("Message")}</label>
                     <input
                       required
                       onChange={(e) => setMessage(e.target.value)}
@@ -612,7 +638,7 @@ const Hero = () => {
                     // onClick={(() => sendMail, setopenThank(true))}
                     className="py-2 px-12 text-[10px] uppercase tracking-[.2rem] text-[#394145] bg-white my-7"
                   >
-                    Submit
+                    {t("Submit")}
                   </button>
                 </form>
               </Box>
@@ -642,13 +668,13 @@ const Hero = () => {
                   className="text-white right-5 absolute"
                 />
                 <p className="text-3xl text-white font-light uppercase font-sans   tracking-[.3rem] mt-10 mb-5">
-                  Welcome To Our Resort
+                  {t("Welcome To Our Resort")}
                 </p>
                 <p className="text-xl text-white font-light uppercase font-sans  tracking-wider">
-                  Book your destination
+                  {t("Book your destination")}
                 </p>
                 <h1 className="text-2xl bg-[#b1b1b1] w-[400px] mx-auto font-big-image py-2 my-20 text-white">
-                  Thank you for your submission
+                  {t("Thank you for your submission")}
                 </h1>
               </Box>
             </Fade>

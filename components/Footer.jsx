@@ -16,7 +16,7 @@ const Footer = () => {
           className="object-fill flex-1 lg:flex-none mx-auto mb-12 lg:m-0 pt-4 w-40 h-40"
         />
         <div className="flex flex-col gap-2 text-white items-start justify-center">
-          <p className="font-semibold mb-6">Get in touch</p>
+          <p className="font-semibold mb-6">{t("Get in touch")}</p>
           <div className="flex flex-row gap-5 items-start">
             <img src="/assits/email.png" className="w-[30px] h-[30px]" />
             <p>marwanmamdouh159@gmai.com</p>

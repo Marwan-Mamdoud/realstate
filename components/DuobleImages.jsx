@@ -47,8 +47,7 @@ const DuobleImages = () => {
           <div className="flex flex-col items-start absolute z-50 pl-4 justify-center w-full px-2 mx-auto -translate-y-full  text-white ">
             <p className="  tracking-[.2rem] text-lg mb-5 ">
               {" "}
-              {/* {t("Event Package")} */}
-              Family Package
+              {t("Family Package")}
             </p>
             <p className="font-big-image  mb-7 leading-relaxed">
               {" "}
@@ -83,17 +82,11 @@ const DuobleImages = () => {
           <div className="flex flex-col items-start justify-center full px-4 pl-4 mx-auto -translate-y-full absolute z-50 text-white ">
             <p className="  tracking-[.2rem] text-lg mb-5 ">
               {" "}
-              {/* {t("Event Package")} */}
-              Wedding Package
+              {t("Wedding Package")}
             </p>
             <p className="font-big-image  mb-7 leading-relaxed">
               {" "}
-              {/* {t("Host your event at our exclusive")} */}
-              Celebrate your special day at our exclusive resort, where
-              relaxation, luxury, and natural beauty unite. Our wedding package
-              offers an unforgettable experience with elegant settings and
-              top-tier amenities, ensuring a magical day for you and your
-              guests.
+              {t("Host your event at our exclusive")}
             </p>
             <button className="bg-[#f7f5f2] py-3 px-7 hidden tracking-[.2rem] font-sans text-[9px]  hover:bg-[#394145] hover:text-white duration-500">
               {t("EXPLORE PACKAGE")}
@@ -124,8 +117,7 @@ const DuobleImages = () => {
           <div className="flex flex-col absolute z-50 items-start justify-center w-full px-4 pl-4  -translate-y-full mx-auto text-white">
             <p className="  tracking-[.2rem] text-lg mb-5 ">
               {" "}
-              {/* {t("Wellness Package")} */}
-              Event Package
+              {t("Event Package")}
             </p>
             <p className="font-big-image mb-7 leading-relaxed">
               {" "}

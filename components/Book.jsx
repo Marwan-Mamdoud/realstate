@@ -62,7 +62,7 @@ const Book = () => {
           />{" "}
           <button
             onClick={sendMail}
-            className=" bg-[#647d8b] text-white font-light py-2 px-10 text-center tracking-widest translate-x-0 lg:-translate-x-[65%]"
+            className=" bg-[#647d8b] text-white font-light py-2 px-10 text-center tracking-widest translate-x-1/2 lg:-translate-x-[65%]"
           >
             {t("Subscribe now")}
           </button>
@@ -153,7 +153,7 @@ const Book = () => {
             {t("Submit")}
           </button>
         </div> */}{" "}
-        <p className="text-white/60 uppercase tracking-[.2rem] text-[10px] font-sans font-semibold pt-12 pb-10 ">
+        <p className="text-white/60 uppercase tracking-[.2rem] text-[10px] font-sans px-5 font-semibold pt-12 pb-10 ">
           {t("UNLOCK A 10% DISCOUNT BY BOOKING DIRECTLY THROUGH OUR WEBSITE")}{" "}
         </p>
       </div>
