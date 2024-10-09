@@ -56,6 +56,40 @@
   max-width: none !important;
 }
 
+.media-wrapper {
+  position: relative;
+}
+/* .media-wrp {
+  position: relative;
+}
+.media-wrapp {
+  position: relative;
+}
+.media-wrappe {
+  position: relative;
+}
+.media-wrapper {
+  position: relative;
+}
+.media-wrapperr {
+  position: relative;
+} */
+
+/* .image {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+} */
+
+.overlay {
+  position: absolute;
+  inset: 0%;
+  background-color: #000;
+  opacity: 40%;
+  z-index: 1;
+}
+
 .font-big-image {
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;

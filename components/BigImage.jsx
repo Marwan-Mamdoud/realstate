@@ -14,10 +14,13 @@ const BigImage = () => {
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:wdth@62.5..100&display=swap"
         rel="stylesheet"
       />
-      <img
-        src="/assits/Resort (4).webp"
-        className="lg:object-cover object-contain lg:w-3/5 w-full h-fit lg:h-[100dvh]"
-      />
+      <div className="media-wrapper lg:w-3/5 ">
+        <div className="overlay"></div>
+        <img
+          src="/assits/Resort (4).webp"
+          className="lg:object-cover object-contain  w-[100dvw] h-fit lg:h-[100dvh]"
+        />
+      </div>
       <div className="bg-[#647d8b] lg:w-3/5 lg:h-[100dvh] h-fit pt-5 w-full text-lg flex pb-5 items-center font-medium text-white/70 font-sans  ">
         <div className="w-10/12  font-big-image  flex items-center flex-col justify-center gap-7 mx-auto h-fit">
           <p className="text-2xl text-white tracking-[.3rem] w-3/6 font-light uppercase font-sans mb-3">

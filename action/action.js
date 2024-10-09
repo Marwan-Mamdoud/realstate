@@ -18,7 +18,17 @@ export const sendEmail = async (
   message
 ) => {
   try {
-    console.log({ name, phone });
+    console.log({
+      name,
+      email,
+      phone,
+      startDate,
+      endDate,
+      occasion,
+      rooms,
+      people,
+      message,
+    });
     await API.post("/api/sendMail", {
       name,
       email,

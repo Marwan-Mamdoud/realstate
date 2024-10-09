@@ -40,9 +40,9 @@ const Hero = () => {
       key: "selection",
     },
   ]);
-  const options = { month: "long", day: "numeric" };
+  const options = { weekday: "short", month: "short", day: "numeric" };
   const [rooms, setRooms] = useState(0);
-  const [phone, setPhone] = useState(0);
+  const [phone, setPhone] = useState();
   const [name, setName] = useState();
   const [startDate, setStartDate] = useState(
     new Date().toLocaleDateString("en-US", options)
@@ -58,8 +58,8 @@ const Hero = () => {
   const sendMail = async () => {
     try {
       // console.log({ name, email, phone });
-
       console.log({ name, phone, startDate, endDate, occasion, rooms, people });
+
       console.log("doneee");
       setOpenDialog(false);
       setopenThank(true);
@@ -190,9 +190,10 @@ const Hero = () => {
         }}
         className="all  lg:w-full w-[w-100vw] text-white relative h-[100dvh] overflow-hidden scroll-smooth"
       >
+        <div className="overlay"></div>
         <div
           onClick={() => setOpen(false)}
-          className={`h-full pl-2 pt-10 w-1/3 bg-slate-700 z-10 ${
+          className={`h-full pl-2 pt-10 w-1/3 bg-slate-700  z-50 ${
             open ? "translate-x-0" : "-translate-x-[100%]"
           }   duration-1000 absolute flex flex-col items-start justify-start gap-12 `}
         >
@@ -209,6 +210,9 @@ const Hero = () => {
             {t("packages")}
           </Link>
         </div>
+        {/* <div className="media-wrapper">
+          <div className="overlay"></div>
+          <div className="video-wrapper"> */}
         <video
           autoPlay
           muted
@@ -216,13 +220,24 @@ const Hero = () => {
           className="video image w-full h-full object-cover"
           src="/assits/Real estate.mp4"
         ></video>
+        {/* </div>
+        </div>
+        <div className="media-wrapper">
+          <div className="overlay"></div>
+          <div className="image-wrapper"> */}
+
         <Image
           src="/assits/Resort (1).webp"
           loading="lazy"
           alt="image"
-          className="image object-cover"
+          className="image  object-cover"
           fill
         />
+        {/* </div>
+        </div>
+        <div className="media-wrapper">
+          <div className="overlay"></div>
+          <div className="image-wrapper"> */}
         <Image
           src="/assits/Resort (2).webp"
           loading="lazy"
@@ -230,6 +245,10 @@ const Hero = () => {
           className="image object-cover"
           fill
         />
+        {/* </div>
+        </div>
+        <div className="media-wrapper">
+          <div className="overlay"></div> */}
         <Image
           src="/assits/Resort (3).webp"
           loading="lazy"
@@ -237,6 +256,9 @@ const Hero = () => {
           className="image object-cover"
           fill
         />
+        {/* </div>
+        <div className="media-wrapper">
+          <div className="overlay"></div> */}
         <Image
           src="/assits/Resort (5).webp"
           loading="lazy"
@@ -244,6 +266,9 @@ const Hero = () => {
           className="image object-cover"
           fill
         />
+        {/* </div>
+        <div className="media-wrapper">
+          <div className="overlay"></div> */}
         <Image
           src="/assits/Resort (4).webp"
           loading="lazy"
@@ -251,9 +276,10 @@ const Hero = () => {
           className="image object-cover"
           fill
         />
+        {/* </div> */}
         <div
           id="home"
-          className="flex items-center w-full font-sans  justify-between -top-10 uppercase px-10 absolute"
+          className="flex items-center z-20  w-full font-sans  justify-between -top-10 uppercase px-10 absolute"
         >
           {/* <div className="w-52  h-52"> */}
           <img
@@ -263,7 +289,7 @@ const Hero = () => {
             className="object-fill pt-4 w-40 h-40"
           />
           {/* </div> */}
-          <div className="lg:flex flex-row hidden tracking-wider  items-center lg:opacity-100 opacity-0 justify-between cursor-pointer gap-11  text-[13px] font-semibold ">
+          <div className="lg:flex flex-row hidden tracking-wider absolute z-50 right-10  items-center lg:opacity-100 opacity-0 justify-between cursor-pointer gap-11  text-[13px] font-semibold ">
             <Link href="#about" className=" link p">
               {t("About")}
             </Link>{" "}
@@ -304,7 +330,12 @@ const Hero = () => {
               className={`  lg:hidden cursor-pointer relative  `}
             >
               <div className="flex ">
-                <Image src="/assits/lang.png" width={25} height={25} />
+                <Image
+                  src="/assits/lang.png"
+                  width={25}
+                  height={25}
+                  alt="image"
+                />
               </div>
 
               <div
@@ -336,7 +367,7 @@ const Hero = () => {
         <div
           // onMouseLeave={hoverMianTextEnd}
           // onMouseEnter={hoverMianTextStart}
-          className="absolute top-[50%] -translate-y-1/2   w-full main-text  flex flex-col justify-center items-center  lg:text-5xl md:text-5xl text-2xl  font-sans "
+          className="absolute top-[50%] -translate-y-1/2   w-full main-text  flex flex-col justify-center items-center  lg:text-5xl md:text-5xl text-2xl z-10  font-sans "
         >
           <p className="great-vibes-regular text-4xl lg:text-6xl md:text-6xl">
             {t("Your Panoramic")}
@@ -348,21 +379,21 @@ const Hero = () => {
             {t("paradise")}
           </span>
         </div>
-        <div className="absolute bottom-0 p-4 gap-x-2 flex items-center justify-between">
+        <div className="absolute bottom-0 p-4 gap-x-2 flex items-center z-10 justify-between">
           <p className="w-2.5 h-2.5 bull1 bull rounded-full bg-slate-500"></p>
           <p className="w-2.5 h-2.5 bull2  bull rounded-full bg-slate-500"></p>
           <p className="w-2.5 h-2.5 bull3 bull rounded-full bg-slate-500"></p>
           <p className="w-2.5 h-2.5 bull4 bull rounded-full bg-slate-500"></p>
         </div>
-        <Link href="#about" className=" absolute bottom-4 right-6  ">
+        <Link href="#about" className=" absolute  bottom-4 z-20 right-6  ">
           <img
             src="/assits/down.png"
             alt=""
             srcset=""
-            className="h-[40px] w-[40px] text-white "
+            className="h-[40px]  w-[40px] text-white "
           />
         </Link>
-        <div className="absolute flex flex-col  text-black  items-center w-fit justify-center right-1/2 translate-x-1/2 bottom-10">
+        <div className="absolute z-20 flex flex-col  text-black  items-center w-fit justify-center right-1/2 translate-x-1/2 bottom-10">
           <div className={`${!calHide1 ? "hidden" : ""} z-50 text-black  mb-5`}>
             <DateRangePicker
               onChange={(item) => {
@@ -422,7 +453,7 @@ const Hero = () => {
                 <p className="">{people}</p>
                 <button
                   onClick={() => {
-                    rooms === 0 ? setPeople(0) : setPeople((prev) => +prev - 1);
+                    people === 0 ? setPeople(0) : setPeople((prev) => prev - 1);
                   }}
                   className=""
                 >
@@ -431,7 +462,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-0 lg:w-fit w-[290px] lg:flex-row flex-col cursor-pointer border-y-[8px] border-x-[9px] border-[#647d8b] text-black  justify-center">
+          <div className="flex items-center gap-0 lg:w-fit w-[290px]  lg:flex-row flex-col cursor-pointer border-y-[8px] border-x-[9px] border-[#647d8b] text-black  justify-center">
             <p
               onClick={() => {
                 sethideCal1((prev) => !prev);
@@ -442,13 +473,13 @@ const Hero = () => {
                   date[0].endDate.toLocaleDateString("en-US", options)
                 );
               }}
-              className="flex items-center text-[9.5px]  font-semibold  tracking-[.2rem] text-start uppercase  bg-white lg:w-[290px] w-full h-[50px] justify-start"
+              className="flex items-center justify-start text-[9.5px]  font-semibold  tracking-[.2rem] text-start uppercase  bg-white lg:w-[290px] w-full h-[45px]"
             >
               <img
                 src="/assits/calend.png"
                 alt=""
                 srcset=""
-                className="w-8 ml-2 mr-1  h-8"
+                className="w-6 ml-2 mr-5  h-6"
               />{" "}
               {`${startDate || "chackIn"}`} - {`${endDate || "CheckOut"}`}
             </p>
@@ -456,13 +487,13 @@ const Hero = () => {
               onClick={() => {
                 setHideRoom((prev) => !prev);
               }}
-              className="flex bg-white justify-start px-3 items-center text-black pl-2 text-[9.3px]  font-semibold tracking-[.2rem] text-start uppercase  lg:border-x-[9px] h-[50px] border-[#647d8b] w-full lg:w-[290px] "
+              className="flex bg-white justify-start px-3 items-center text-black pl-2 text-[9.3px]    font-semibold tracking-[.2rem] text-start uppercase  lg:border-x-[9px] h-[45px] border-[#647d8b] w-full lg:w-[290px] "
             >
               <img
                 src="/assits/user.png"
                 alt=""
                 srcset=""
-                className="w-6 mr-5 ml-2  h-6"
+                className="w-5 mr-5 ml-2  h-5"
               />{" "}
               <p className="mr-7">
                 {t("people")}: {people}
@@ -475,7 +506,7 @@ const Hero = () => {
               onClick={() => {
                 setOpenDialog(true);
               }}
-              className="bg-[#f7f5f2] text-black   py-[18px]  text-center lg:w-[140px] w-full  text-[9.5px] font-semibold tracking-[.2rem] hover:bg-[#394145] hover:text-[#f7f5f2] hover:cursor-pointer duration-500 uppercase"
+              className="bg-[#f7f5f2] text-black   py-[15px]  text-center lg:w-[140px] w-full  text-[9.5px] font-semibold tracking-[.2rem] hover:bg-[#394145] hover:text-[#f7f5f2] hover:cursor-pointer duration-500 uppercase"
             >
               {t("check avilability")}
             </botton>
@@ -494,12 +525,12 @@ const Hero = () => {
             }}
           >
             <Fade in={openDailog}>
-              <Box className=" absolute flex flex-col items-center justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full h-full bg-[#394145] opacity-80  ">
+              <Box className=" absolute flex flex-col items-center justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full h-full bg-[#394145] opacity-40  ">
                 <CloseButton
                   onClick={() => setOpenDialog(false)}
                   className="text-white right-5 top-5 absolute"
                 />
-                <p className="text-3xl font-light uppercase font-sans  text-white  tracking-[.3rem] mt-12 mb-5">
+                <p className="text-3xl font-light uppercase font-sans  text-white  tracking-[.3rem] lg:mt-12 mt-20 mb-5">
                   {t("Welcome To Our Resort")}
                 </p>
                 <p className="text-xl text-white font-light uppercase font-sans  tracking-wider">
@@ -507,7 +538,7 @@ const Hero = () => {
                 </p>
                 <form
                   action={sendMail}
-                  className="py-8 px-10 w-[500px] mx-auto"
+                  className="py-8 px-10  w-[580px] mx-auto"
                 >
                   <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
                     <label htmlFor="name">{t("Full Name")}</label>
@@ -515,7 +546,7 @@ const Hero = () => {
                       required
                       onChange={(e) => setName(e.target.value)}
                       type="text"
-                      className="w-[230px] h-[40px] pl-5 text-[#394145] outline-none"
+                      className="w-[290px] h-[40px] pl-5 text-[#394145] outline-none"
                       placeholder="full name"
                     />
                   </div>
@@ -525,7 +556,7 @@ const Hero = () => {
                       required
                       onChange={(e) => setEmail(e.target.value)}
                       type="email"
-                      className="w-[230px] h-[40px] pl-5 text-[#394145] outline-none"
+                      className="w-[290px] h-[40px] pl-5 text-[#394145] outline-none"
                       placeholder="Email"
                     />
                   </div>
@@ -535,9 +566,9 @@ const Hero = () => {
                     </label>
                     <input
                       required
-                      onChange={(e) => setPhone(e.target.value)}
-                      type="number"
-                      className="w-[230px] h-[40px] pl-5 ml-5   text-[#394145] outline-none"
+                      onChange={(e) => setPhone(+e.target.value)}
+                      type="text"
+                      className="w-[290px] h-[40px] pl-5 ml-5   text-[#394145] outline-none"
                       placeholder="+971"
                     />
                   </div>
@@ -551,13 +582,13 @@ const Hero = () => {
                           setStartDate(date[0].startDate);
                           setEndDate(date[0].endDate);
                         }}
-                        className="flex items-center text-[10px] cursor-pointer text-black  tracking-[.2rem] text-start uppercase  bg-white w-[230px] h-[40px] justify-start"
+                        className="flex items-center text-[10px] cursor-pointer text-black  tracking-[.2rem] text-start uppercase  bg-white w-[290px] h-[40px] justify-start"
                       >
                         <img
                           src="/assits/calend.png"
                           alt=""
                           srcset=""
-                          className="w-8 ml-2 mr-1  h-8"
+                          className="w-7 ml-2 mr-2  h-7"
                         />{" "}
                         {`${startDate || "chackIn"}`} -{" "}
                         {`${endDate || "CheckOut"}`}
@@ -589,7 +620,7 @@ const Hero = () => {
                       required
                       onChange={(e) => setOccasion(e.target.value)}
                       type="text"
-                      className="w-[230px] h-[40px] font-big-image pl-5 text-[#394145] outline-none"
+                      className="w-[290px] h-[40px] font-big-image pl-5 text-[#394145] outline-none"
                       placeholder="Select"
                     >
                       <option value="" className="text-[#394145]">
@@ -606,9 +637,9 @@ const Hero = () => {
                     <input
                       value={people}
                       required
-                      onChange={(e) => setPeople(e.target.value)}
-                      type="number"
-                      className="w-[230px] h-[40px] pl-5 text-[#394145] outline-none"
+                      onChange={(e) => setPeople(+e.target.value)}
+                      type="text"
+                      className="w-[290px] h-[40px] pl-5 text-[#394145] outline-none"
                       placeholder="eg 1, 2"
                     />
                   </div>
@@ -617,9 +648,9 @@ const Hero = () => {
                     <input
                       required
                       value={rooms}
-                      onChange={(e) => setRooms(e.target.value)}
-                      type="number"
-                      className="w-[230px] h-[40px] pl-5 text-[#394145] focus:text-[#394145] outline-none"
+                      onChange={(e) => setRooms(+e.target.value)}
+                      type="text"
+                      className="w-[290px] h-[40px] pl-5 text-[#394145] focus:text-[#394145] outline-none"
                       placeholder="Rooms"
                     />
                   </div>
@@ -629,7 +660,7 @@ const Hero = () => {
                       required
                       onChange={(e) => setMessage(e.target.value)}
                       type="messge"
-                      className="w-[230px] h-[50px] pl-5 font-big-image text-[#394145] focus:text-[#394145] outline-none"
+                      className="w-[290px] h-[50px] pl-5 font-big-image text-[#394145] focus:text-[#394145] outline-none"
                       placeholder="Message"
                     />
                   </div>
