@@ -153,7 +153,7 @@ const Book = () => {
             {t("Submit")}
           </button>
         </div> */}{" "}
-        <p className="text-white/60 uppercase tracking-[.2rem] text-[10px] font-sans px-5 font-semibold pt-12 pb-10 ">
+        <p className="text-white/60 uppercase tracking-[.2rem] text-center  text-[10px] font-sans px-5 font-semibold pt-12 pb-10 ">
           {t("UNLOCK A 10% DISCOUNT BY BOOKING DIRECTLY THROUGH OUR WEBSITE")}{" "}
         </p>
       </div>
