@@ -526,7 +526,7 @@ const Hero = () => {
             className="overflow-auto"
           >
             <Fade in={openDailog}>
-              <Box className=" absolute flex flex-col items-center text-white justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full overflow-auto lg:overflow-auto bg-[#394145] opacity-40  ">
+              <Box className=" absolute flex flex-col items-center text-white justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full overflow-auto  bg-[#394145] opacity-40  ">
                 <CloseButton
                   onClick={() => setOpenDialog(false)}
                   className="text-white right-5 top-5  absolute"
@@ -541,8 +541,10 @@ const Hero = () => {
                   action={sendMail}
                   className="lg:py-8 py-1 w-fit   lg:w-[540px] mx-auto"
                 >
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image py-5 justify-between  ">
-                    <label htmlFor="name">{t("Full Name")}</label>
+                  <div className="flex  w-fit flex-col pb-4 items-start gap-3 mx-auto font-big-image py-5 justify-between  ">
+                    <label htmlFor="name" className="text-start">
+                      {t("Full Name")}
+                    </label>
                     <input
                       required
                       onChange={(e) => setName(e.target.value)}
@@ -551,7 +553,7 @@ const Hero = () => {
                       placeholder="full name"
                     />
                   </div>
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image py-5 justify-between  ">
+                  <div className="flex  flex-col pb-4 items-start mx-auto w-fit gap-3 font-big-image py-5 justify-between  ">
                     <label htmlFor="name" className="text-white">
                       {t("Email")}
                     </label>
@@ -563,7 +565,7 @@ const Hero = () => {
                       placeholder="Email"
                     />
                   </div>
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image py-5 justify-between ">
+                  <div className="flex  flex-col pb-4 items-start mx-auto w-fit gap-3 font-big-image py-5 justify-between ">
                     <label
                       htmlFor="name"
                       className=" text-white text-start w-fit"
@@ -579,7 +581,7 @@ const Hero = () => {
                     />
                   </div>
                   <div className="flex flex-col  overflow-auto ">
-                    <div className="flex lg:flex-row flex-col overflow-auto py-5 items-start gap-3  justify-between  ">
+                    <div className="flex  flex-col overflow-auto py-5 items-start w-fit mx-auto gap-3  justify-between  ">
                       <p className="font-big-image text-white">{t("Date")}</p>
                       <p
                         onClick={() => {
@@ -607,7 +609,7 @@ const Hero = () => {
                         {`${endDate || "CheckOut"}`}
                       </p>
                     </div>
-                    {/* <div className="abso lg:flex-row flex-collute flex flex-col items-center w-fit justify-between  right-1/2 translate-x-1/2 bottom-10"> */}
+                    {/* <div className="abso  flex-collute flex flex-col items-center w-fit justify-between  right-1/2 translate-x-1/2 bottom-10"> */}
                     <div
                       className={`${
                         !calHide ? "hidden" : ""
@@ -627,7 +629,7 @@ const Hero = () => {
                       />
                     </div>
                   </div>
-                  <div className="flex lg:flex-row flex-col  items-start gap-3 font-big-image py-5 justify-between  ">
+                  <div className="flex  flex-col  items-start w-fit mx-auto gap-3 font-big-image py-5 justify-between  ">
                     <label htmlFor="name" className="text-white">
                       {t("Occasion")}
                     </label>
@@ -647,7 +649,7 @@ const Hero = () => {
                     </select>
                   </div>
 
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image py-5 justify-between ">
+                  <div className="flex  flex-col pb-4 items-start mx-auto w-fit gap-3 font-big-image py-5 justify-start ">
                     <label htmlFor="name" className="text-white text-start">
                       {t("Number of people")}
                     </label>
@@ -660,7 +662,7 @@ const Hero = () => {
                       placeholder="eg 1, 2"
                     />
                   </div>
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image py-5 justify-between">
+                  <div className="flex  flex-col pb-4 items-start w-fit mx-auto gap-3 font-big-image py-5 justify-between">
                     <label htmlFor="name" className="text-white text-start">
                       {t("Number of Rooms")}
                     </label>
@@ -673,7 +675,7 @@ const Hero = () => {
                       placeholder="Rooms"
                     />
                   </div>
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image py-5 justify-between  ">
+                  <div className="flex  flex-col pb-4 items-start mx-auto w-fit gap-3 font-big-image py-5 justify-between  ">
                     <label htmlFor="name" className="text-white">
                       {t("Message")}
                     </label>
