@@ -122,7 +122,7 @@ const Review = () => {
             <p>
               {t("spectacular view, your private pool and the space that you")}{" "}
             </p>
-            <p>{t("call your own during the stay.")} </p>
+            <p>{t("call your own during the stay")} </p>
           </div>
           <p className="font-sans text-[#7e8083] text-[10px] tracking-[.2rem]">
             <span className="font-bold mr-2">JANE L.</span>
@@ -133,7 +133,7 @@ const Review = () => {
           <div className="fontReview text-2xl font-serif text-[#394145] mb-5">
             <p>{t("I could have stayed at Hidden")}</p>
             <p> {t("was easily the nicest")}</p>
-            <p>{t("have ever stayed.")} </p>
+            <p>{t("have ever stayed")} </p>
           </div>
           <p className="font-sans text-[#7e8083] text-[10px] tracking-[.2rem]">
             <span className="font-bold mr-2"> ANNA M.</span>
@@ -143,17 +143,17 @@ const Review = () => {
         <div className="w-2/3 reviews opacity-0 top-16 absolute review3 mx-auto text-center ">
           <div className="fontReview text-2xl font-serif text-[#394145] mb-5">
             <p>
-              {t("Absolute perfection. The service, the decor, the food, the")}{" "}
+              {t("Absolute perfection The service the decor the food the")}{" "}
             </p>
-            <p>{t("villas, the view, the staff")}</p>
-            <p>{t("cmoved to your own estate.")}</p>
+            <p>{t("villas the view the staff")}</p>
+            <p>{t("cmoved to your own estate")}</p>
           </div>
           <p className="font-sans text-[#7e8083] text-[10px] tracking-[.2rem]">
             <span className="font-bold mr-2"> Amy Argyle </span>
             {t("TRIP ADVISOR")}
           </p>
         </div>
-        <div className="gap-x-2 flex absolute lg:top-60 top-80 items-center justify-between">
+        <div className="gap-x-2 flex absolute lg:top-60 top-96 items-center justify-between">
           <p className="w-2.5 h-2.5 boll1 rounded-full bg-slate-400"></p>
           <p className="w-2.5 h-2.5 boll2 rounded-full bg-slate-400"></p>
           <p className="w-2.5 h-2.5 boll3 rounded-full bg-slate-400"></p>

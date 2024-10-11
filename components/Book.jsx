@@ -46,15 +46,15 @@ const Book = () => {
     );
   }, []);
   return (
-    <div className=" book-back-ground relative w-full  ">
+    <div className=" book-back-ground  relative w-full  ">
       <div
         id="book"
-        className="book-content flex flex-col items-center justify-between footter absolute w-full bottom-0"
+        className="book-content flex flex-col items-center justify-center footter absolute w-full bottom-0"
       >
         <p className="text-white/80 uppercase tracking-[.3rem] text-xl pt-16 mb-10 ">
           {t("YOUR BALI PARADISE AWAITS")}
         </p>
-        <div className="">
+        <div className="flex flex-col lg:flex-row w-full lg:w-fit justify-center items-center">
           <input
             type="text"
             placeholder="Enter Your Email"
@@ -62,7 +62,7 @@ const Book = () => {
           />{" "}
           <button
             onClick={sendMail}
-            className=" bg-[#647d8b] text-white font-light py-2 px-10 text-center tracking-widest translate-x-1/2 lg:-translate-x-[65%]"
+            className=" bg-[#647d8b] text-white font-light py-2 px-10 text-center tracking-widest mx-auto translate-x-0 lg:-translate-x-[65%]"
           >
             {t("Subscribe now")}
           </button>
