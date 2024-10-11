@@ -18,7 +18,7 @@ const BigImage = () => {
         <div className="overlay"></div>
         <img
           src="/assits/Resort (4).webp"
-          className="lg:object-cover object-contain  w-[100dvw] h-fit lg:h-[100dvh]"
+          className="lg:object-cover   w-[100dvw] h-full lg:h-[100dvh]"
         />
       </div>
       <div className="bg-[#647d8b] lg:w-3/5 lg:h-[100dvh] h-fit pt-5 w-full text-lg flex pb-5 items-center font-medium text-white/70 font-sans  ">
