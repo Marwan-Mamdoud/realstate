@@ -536,10 +536,7 @@ const Hero = () => {
                 <p className="text-xl text-white font-light uppercase font-sans  tracking-wider">
                   {t("Book your destination")}
                 </p>
-                <form
-                  action={sendMail}
-                  className="py-8 px-10  w-[580px] mx-auto"
-                >
+                <form action={sendMail} className="py-8    w-[540px] mx-auto">
                   <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
                     <label htmlFor="name">{t("Full Name")}</label>
                     <input
