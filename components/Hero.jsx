@@ -529,9 +529,9 @@ const Hero = () => {
               <Box className=" absolute flex flex-col items-center text-white justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full overflow-auto lg:overflow-auto bg-[#394145] opacity-40  ">
                 <CloseButton
                   onClick={() => setOpenDialog(false)}
-                  className="text-white right-5 top-5 text-xl absolute"
+                  className="text-white right-5 top-5  absolute"
                 />
-                <p className="lg:text-3xl text-xl  font-light uppercase font-sans w-full mx-auto text-white  tracking-[.3rem] lg:mt-12  mb-1 lg:mb-5">
+                <p className="lg:text-3xl text-xl mt-7 font-light uppercase font-sans w-full mx-auto text-white  tracking-[.3rem] lg:mt-12  mb-1 lg:mb-5">
                   {t("Welcome To Our Resort")}
                 </p>
                 <p className="lg:text-xl text-base text-white font-light uppercase font-sans  tracking-wider">
@@ -578,8 +578,8 @@ const Hero = () => {
                       placeholder="+971"
                     />
                   </div>
-                  <div className="flex flex-col  ">
-                    <div className="flex lg:flex-row flex-col  py-5 items-start gap-3  justify-between  ">
+                  <div className="flex flex-col  overflow-auto ">
+                    <div className="flex lg:flex-row flex-col overflow-auto py-5 items-start gap-3  justify-between  ">
                       <p className="font-big-image text-white">{t("Date")}</p>
                       <p
                         onClick={() => {
@@ -611,7 +611,7 @@ const Hero = () => {
                     <div
                       className={`${
                         !calHide ? "hidden" : ""
-                      } z-50 absolute text-black mt-16 lg:translate-x-0 -translate-x-2/3 mb-5`}
+                      } z-50 absolute text-black mt-24  overflow-x-auto lg:translate-x-0 -translate-x-2/3 mb-5`}
                     >
                       <DateRangePicker
                         onChange={(item) => {
