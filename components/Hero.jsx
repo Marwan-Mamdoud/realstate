@@ -530,7 +530,7 @@ const Hero = () => {
                   onClick={() => setOpenDialog(false)}
                   className="text-white right-0 lg:right-5 lg:top-5 top-0 text-xl absolute"
                 />
-                <p className="lg:text-3xl text-xl  font-light uppercase font-sans  text-white  tracking-[.3rem] lg:mt-12  mb-1 lg:mb-5">
+                <p className="lg:text-3xl text-xl  font-light uppercase font-sans w-full mx-auto text-white  tracking-[.3rem] lg:mt-12  mb-1 lg:mb-5">
                   {t("Welcome To Our Resort")}
                 </p>
                 <p className="lg:text-xl text-base text-white font-light uppercase font-sans  tracking-wider">
