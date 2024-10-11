@@ -525,20 +525,20 @@ const Hero = () => {
             }}
           >
             <Fade in={openDailog}>
-              <Box className=" absolute flex flex-col items-center justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full h-fit overflow-scroll bg-[#394145] opacity-40  ">
+              <Box className=" absolute flex flex-col items-center justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full overflow-auto bg-[#394145] opacity-40  ">
                 <CloseButton
                   onClick={() => setOpenDialog(false)}
                   className="text-white right-5 top-5 absolute"
                 />
-                <p className="text-3xl font-light uppercase font-sans  text-white  tracking-[.3rem] lg:mt-12 mt-20 mb-5">
+                <p className="lg:text-3xl text-xl  font-light uppercase font-sans  text-white  tracking-[.3rem] lg:mt-12 mt-2 mb-1 lg:mb-5">
                   {t("Welcome To Our Resort")}
                 </p>
-                <p className="text-xl text-white font-light uppercase font-sans  tracking-wider">
+                <p className="lg:text-xl text-base text-white font-light uppercase font-sans  tracking-wider">
                   {t("Book your destination")}
                 </p>
                 <form
                   action={sendMail}
-                  className="py-8 w-fit   lg:w-[540px] mx-auto"
+                  className="lg:py-8 py-1 w-fit   lg:w-[540px] mx-auto"
                 >
                   <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between  ">
                     <label htmlFor="name">{t("Full Name")}</label>
