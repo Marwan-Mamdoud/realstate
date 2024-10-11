@@ -534,12 +534,12 @@ const Hero = () => {
                 <p className="lg:text-3xl text-xl mt-7 font-light uppercase font-sans w-full mx-auto text-white  tracking-[.3rem] lg:mt-12  mb-1 lg:mb-5">
                   {t("Welcome To Our Resort")}
                 </p>
-                <p className="lg:text-xl text-base text-white font-light uppercase font-sans  tracking-wider">
+                <p className="lg:text-xl text-base text-white mt-3 font-light uppercase font-sans  tracking-wider">
                   {t("Book your destination")}
                 </p>
                 <form
                   action={sendMail}
-                  className="lg:py-8 py-1 w-fit   lg:w-[540px] mx-auto"
+                  className="lg:py-8 py-2 w-fit   lg:w-[540px] mx-auto"
                 >
                   <div className="flex  w-fit flex-col pb-4 items-start gap-3 mx-auto font-big-image py-5 justify-between  ">
                     <label htmlFor="name" className="text-start">
