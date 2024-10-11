@@ -525,7 +525,7 @@ const Hero = () => {
             }}
           >
             <Fade in={openDailog}>
-              <Box className=" absolute flex flex-col items-center justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full h-full bg-[#394145] opacity-40  ">
+              <Box className=" absolute flex flex-col items-center justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full h-fit overflow-scroll bg-[#394145] opacity-40  ">
                 <CloseButton
                   onClick={() => setOpenDialog(false)}
                   className="text-white right-5 top-5 absolute"
