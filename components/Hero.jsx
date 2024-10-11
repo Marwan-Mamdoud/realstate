@@ -540,7 +540,7 @@ const Hero = () => {
                   action={sendMail}
                   className="py-8 w-fit   lg:w-[540px] mx-auto"
                 >
-                  <div className="flex pb-4 items-center font-big-image justify-between  ">
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between  ">
                     <label htmlFor="name">{t("Full Name")}</label>
                     <input
                       required
@@ -550,7 +550,7 @@ const Hero = () => {
                       placeholder="full name"
                     />
                   </div>
-                  <div className="flex pb-4 items-center font-big-image justify-between  ">
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between  ">
                     <label htmlFor="name">{t("Email")}</label>
                     <input
                       required
@@ -560,7 +560,7 @@ const Hero = () => {
                       placeholder="Email"
                     />
                   </div>
-                  <div className="flex pb-4 items-center font-big-image justify-between ">
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between ">
                     <label htmlFor="name" className="text-start w-fit">
                       {t("Phone Number")}
                     </label>
@@ -572,15 +572,22 @@ const Hero = () => {
                       placeholder="+971"
                     />
                   </div>
-                  <div className="flex flex-col">
-                    <div className="flex pb-4 items-center  justify-between  ">
+                  <div className="flex flex-col ">
+                    <div className="flex lg:flex-row flex-col  pb-4 items-start gap-3  justify-between  ">
                       <p className="font-big-image">{t("Date")}</p>
                       <p
                         onClick={() => {
                           sethideCal((prev) => !prev);
                           console.log(date[0].startDate, date[0].endDate);
-                          setStartDate(date[0].startDate);
-                          setEndDate(date[0].endDate);
+                          setStartDate(
+                            date[0].startDate.toLocaleDateString(
+                              "en-US",
+                              options
+                            )
+                          );
+                          setEndDate(
+                            date[0].endDate.toLocaleDateString("en-US", options)
+                          );
                         }}
                         className="flex items-center text-[10px] cursor-pointer text-black  tracking-[.2rem] text-start uppercase  bg-white w-[290px] h-[40px] justify-start"
                       >
@@ -594,11 +601,11 @@ const Hero = () => {
                         {`${endDate || "CheckOut"}`}
                       </p>
                     </div>
-                    {/* <div className="absolute flex flex-col items-center w-fit justify-between  right-1/2 translate-x-1/2 bottom-10"> */}
+                    {/* <div className="abso lg:flex-row flex-collute flex flex-col items-center w-fit justify-between  right-1/2 translate-x-1/2 bottom-10"> */}
                     <div
                       className={`${
                         !calHide ? "hidden" : ""
-                      } z-50 absolute text-black mt-10 mb-5`}
+                      } z-50 absolute text-black mt-16 lg:translate-x-0 -translate-x-2/3 mb-5`}
                     >
                       <DateRangePicker
                         onChange={(item) => {
@@ -614,7 +621,7 @@ const Hero = () => {
                       />
                     </div>
                   </div>
-                  <div className="flex pb-4 items-center font-big-image justify-between  ">
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between  ">
                     <label htmlFor="name">{t("Occasion")}</label>
                     <select
                       required
@@ -632,7 +639,7 @@ const Hero = () => {
                     </select>
                   </div>
 
-                  <div className="flex pb-4 items-center font-big-image justify-between ">
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between ">
                     <label htmlFor="name" className="text-start">
                       {t("Number of people")}
                     </label>
@@ -645,7 +652,7 @@ const Hero = () => {
                       placeholder="eg 1, 2"
                     />
                   </div>
-                  <div className="flex pb-4 items-center font-big-image justify-between">
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between">
                     <label htmlFor="name" className="text-start">
                       {t("Number of Rooms")}
                     </label>
@@ -658,7 +665,7 @@ const Hero = () => {
                       placeholder="Rooms"
                     />
                   </div>
-                  <div className="flex pb-4 items-center font-big-image justify-between  ">
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between  ">
                     <label htmlFor="name">{t("Message")}</label>
                     <input
                       required
