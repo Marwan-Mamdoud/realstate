@@ -536,41 +536,44 @@ const Hero = () => {
                 <p className="text-xl text-white font-light uppercase font-sans  tracking-wider">
                   {t("Book your destination")}
                 </p>
-                <form action={sendMail} className="py-8    w-[540px] mx-auto">
-                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
+                <form
+                  action={sendMail}
+                  className="py-8 w-fit   lg:w-[540px] mx-auto"
+                >
+                  <div className="flex pb-4 items-center font-big-image justify-between  ">
                     <label htmlFor="name">{t("Full Name")}</label>
                     <input
                       required
                       onChange={(e) => setName(e.target.value)}
                       type="text"
-                      className="w-[290px] h-[40px] pl-5 text-[#394145] outline-none"
+                      className="w-[290px] h-[40px] pl-5 rounded-none text-[#394145] outline-none"
                       placeholder="full name"
                     />
                   </div>
-                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
+                  <div className="flex pb-4 items-center font-big-image justify-between  ">
                     <label htmlFor="name">{t("Email")}</label>
                     <input
                       required
                       onChange={(e) => setEmail(e.target.value)}
                       type="email"
-                      className="w-[290px] h-[40px] pl-5 text-[#394145] outline-none"
+                      className="w-[290px] h-[40px] pl-5 rounded-none text-[#394145] outline-none"
                       placeholder="Email"
                     />
                   </div>
-                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
-                    <label htmlFor="name" className="">
+                  <div className="flex pb-4 items-center font-big-image justify-between ">
+                    <label htmlFor="name" className="text-start w-fit">
                       {t("Phone Number")}
                     </label>
                     <input
                       required
                       onChange={(e) => setPhone(+e.target.value)}
                       type="text"
-                      className="w-[290px] h-[40px] pl-5 ml-5   text-[#394145] outline-none"
+                      className="w-[290px] h-[40px] pl-5  rounded-none  text-[#394145] outline-none"
                       placeholder="+971"
                     />
                   </div>
                   <div className="flex flex-col">
-                    <div className="flex pb-4 items-center  justify-between  gap-5">
+                    <div className="flex pb-4 items-center  justify-between  ">
                       <p className="font-big-image">{t("Date")}</p>
                       <p
                         onClick={() => {
@@ -611,16 +614,16 @@ const Hero = () => {
                       />
                     </div>
                   </div>
-                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
+                  <div className="flex pb-4 items-center font-big-image justify-between  ">
                     <label htmlFor="name">{t("Occasion")}</label>
                     <select
                       required
                       onChange={(e) => setOccasion(e.target.value)}
                       type="text"
-                      className="w-[290px] h-[40px] font-big-image pl-5 text-[#394145] outline-none"
+                      className="w-[290px] h-[40px] rounded-none font-big-image pl-5 text-[#394145] outline-none"
                       placeholder="Select"
                     >
-                      <option value="" className="text-[#394145]">
+                      <option value="" className="rounded-none text-[#394145]">
                         {t("Select")}
                       </option>
                       <option value="wedding">{t("Wedding")}</option>
@@ -629,35 +632,39 @@ const Hero = () => {
                     </select>
                   </div>
 
-                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
-                    <label htmlFor="name">{t("Number of people")}</label>
+                  <div className="flex pb-4 items-center font-big-image justify-between ">
+                    <label htmlFor="name" className="text-start">
+                      {t("Number of people")}
+                    </label>
                     <input
                       value={people}
                       required
                       onChange={(e) => setPeople(+e.target.value)}
                       type="text"
-                      className="w-[290px] h-[40px] pl-5 text-[#394145] outline-none"
+                      className="w-[290px] h-[40px] rounded-none pl-5 text-[#394145] outline-none"
                       placeholder="eg 1, 2"
                     />
                   </div>
-                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
-                    <label htmlFor="name">{t("Number of Rooms")}</label>
+                  <div className="flex pb-4 items-center font-big-image justify-between">
+                    <label htmlFor="name" className="text-start">
+                      {t("Number of Rooms")}
+                    </label>
                     <input
                       required
                       value={rooms}
                       onChange={(e) => setRooms(+e.target.value)}
                       type="text"
-                      className="w-[290px] h-[40px] pl-5 text-[#394145] focus:text-[#394145] outline-none"
+                      className="w-[290px] h-[40px] pl-5 rounded-none text-[#394145] focus:text-[#394145] outline-none"
                       placeholder="Rooms"
                     />
                   </div>
-                  <div className="flex pb-4 items-center font-big-image justify-between  gap-5">
+                  <div className="flex pb-4 items-center font-big-image justify-between  ">
                     <label htmlFor="name">{t("Message")}</label>
                     <input
                       required
                       onChange={(e) => setMessage(e.target.value)}
                       type="messge"
-                      className="w-[290px] h-[50px] pl-5 font-big-image text-[#394145] focus:text-[#394145] outline-none"
+                      className="w-[290px] h-[50px] pl-5 rounded-none font-big-image text-[#394145] focus:text-[#394145] outline-none"
                       placeholder="Message"
                     />
                   </div>

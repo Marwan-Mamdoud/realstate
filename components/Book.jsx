@@ -58,7 +58,7 @@ const Book = () => {
           <input
             type="text"
             placeholder="Enter Your Email"
-            className="lg:w-[500px] w-11/12 h-[45px] lg:translate-x-20 translate-x-0 outline-none focus:border-black mb-5 lg:mb-0 pl-5"
+            className="lg:w-[500px] w-11/12 h-[45px] lg:translate-x-20 translate-x-0 outline-none focus:border-black mb-5 rounded-none lg:mb-0 pl-5"
           />{" "}
           <button
             onClick={sendMail}
