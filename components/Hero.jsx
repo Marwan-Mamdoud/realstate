@@ -523,9 +523,10 @@ const Hero = () => {
                 timeout: 500,
               },
             }}
+            className="overflow-auto"
           >
             <Fade in={openDailog}>
-              <Box className=" absolute flex flex-col items-center justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full overflow-auto bg-[#394145] opacity-40  ">
+              <Box className=" absolute flex flex-col items-center text-white justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full overflow-auto lg:overflow-auto bg-[#394145] opacity-40  ">
                 <CloseButton
                   onClick={() => setOpenDialog(false)}
                   className="text-white right-0 lg:right-5 lg:top-5 top-0 text-xl absolute"
@@ -540,7 +541,7 @@ const Hero = () => {
                   action={sendMail}
                   className="lg:py-8 py-1 w-fit   lg:w-[540px] mx-auto"
                 >
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between  ">
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image py-5 justify-between  ">
                     <label htmlFor="name">{t("Full Name")}</label>
                     <input
                       required
@@ -550,8 +551,10 @@ const Hero = () => {
                       placeholder="full name"
                     />
                   </div>
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between  ">
-                    <label htmlFor="name">{t("Email")}</label>
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image py-5 justify-between  ">
+                    <label htmlFor="name" className="text-white">
+                      {t("Email")}
+                    </label>
                     <input
                       required
                       onChange={(e) => setEmail(e.target.value)}
@@ -560,8 +563,11 @@ const Hero = () => {
                       placeholder="Email"
                     />
                   </div>
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between ">
-                    <label htmlFor="name" className="text-start w-fit">
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image py-5 justify-between ">
+                    <label
+                      htmlFor="name"
+                      className=" text-white text-start w-fit"
+                    >
                       {t("Phone Number")}
                     </label>
                     <input
@@ -572,9 +578,9 @@ const Hero = () => {
                       placeholder="+971"
                     />
                   </div>
-                  <div className="flex flex-col ">
-                    <div className="flex lg:flex-row flex-col  pb-4 items-start gap-3  justify-between  ">
-                      <p className="font-big-image">{t("Date")}</p>
+                  <div className="flex flex-col  ">
+                    <div className="flex lg:flex-row flex-col  py-5 items-start gap-3  justify-between  ">
+                      <p className="font-big-image text-white">{t("Date")}</p>
                       <p
                         onClick={() => {
                           sethideCal((prev) => !prev);
@@ -621,8 +627,10 @@ const Hero = () => {
                       />
                     </div>
                   </div>
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between  ">
-                    <label htmlFor="name">{t("Occasion")}</label>
+                  <div className="flex lg:flex-row flex-col  items-start gap-3 font-big-image py-5 justify-between  ">
+                    <label htmlFor="name" className="text-white">
+                      {t("Occasion")}
+                    </label>
                     <select
                       required
                       onChange={(e) => setOccasion(e.target.value)}
@@ -639,8 +647,8 @@ const Hero = () => {
                     </select>
                   </div>
 
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between ">
-                    <label htmlFor="name" className="text-start">
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image py-5 justify-between ">
+                    <label htmlFor="name" className="text-white text-start">
                       {t("Number of people")}
                     </label>
                     <input
@@ -652,8 +660,8 @@ const Hero = () => {
                       placeholder="eg 1, 2"
                     />
                   </div>
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between">
-                    <label htmlFor="name" className="text-start">
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image py-5 justify-between">
+                    <label htmlFor="name" className="text-white text-start">
                       {t("Number of Rooms")}
                     </label>
                     <input
@@ -665,8 +673,10 @@ const Hero = () => {
                       placeholder="Rooms"
                     />
                   </div>
-                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image justify-between  ">
-                    <label htmlFor="name">{t("Message")}</label>
+                  <div className="flex lg:flex-row flex-col pb-4 items-start gap-3 font-big-image py-5 justify-between  ">
+                    <label htmlFor="name" className="text-white">
+                      {t("Message")}
+                    </label>
                     <input
                       required
                       onChange={(e) => setMessage(e.target.value)}
