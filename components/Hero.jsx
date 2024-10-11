@@ -528,9 +528,9 @@ const Hero = () => {
               <Box className=" absolute flex flex-col items-center justify-center outline-none border-[1px] text-center py-3 px-3 border-[#394145]  w-full overflow-auto bg-[#394145] opacity-40  ">
                 <CloseButton
                   onClick={() => setOpenDialog(false)}
-                  className="text-white right-5 top-5 absolute"
+                  className="text-white right-0 lg:right-5 lg:top-5 top-0 text-xl absolute"
                 />
-                <p className="lg:text-3xl text-xl  font-light uppercase font-sans  text-white  tracking-[.3rem] lg:mt-12 mt-2 mb-1 lg:mb-5">
+                <p className="lg:text-3xl text-xl  font-light uppercase font-sans  text-white  tracking-[.3rem] lg:mt-12  mb-1 lg:mb-5">
                   {t("Welcome To Our Resort")}
                 </p>
                 <p className="lg:text-xl text-base text-white font-light uppercase font-sans  tracking-wider">
