@@ -51,7 +51,7 @@ const Book = () => {
         id="book"
         className="book-content flex flex-col items-center justify-center footter absolute w-full bottom-0"
       >
-        <p className="text-white/80 uppercase tracking-[.3rem] text-xl pt-16 mb-10 ">
+        <p className="text-white/80 uppercase tracking-[.3rem] text-xl text-center pt-16 mb-10 ">
           {t("YOUR BALI PARADISE AWAITS")}
         </p>
         <div className="flex flex-col lg:flex-row w-full lg:w-fit justify-center items-center">
